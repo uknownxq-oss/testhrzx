@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRZX STORE - Update 2.3</title>
+    <style>
+        body { background-color: #000; color: white; opacity: 0; transition: opacity 0.5s ease-in; }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Space+Grotesk:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        
+        :root {
+            --accent-primary: #ffffff;
+            --accent-glow: rgba(255, 255, 255, 0.4);
+            --bg-dark: #000000;
+            --glass-v3: rgba(255, 255, 255, 0.03);
+            --border-v3: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.4);
+        }
+
+        body.light-mode {
+            --bg-dark: #f8fafc;
+            --glass-v3: rgba(255, 255, 255, 0.4);
+            --border-v3: rgba(0, 0, 0, 0.05);
+            --text-main: #0f172a;
+            --text-muted: rgba(15, 23, 42, 0.5);
+            --accent-primary: #0f172a;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.95)),
+                url('https://img2.pixhost.to/images/7816/724906139_alip-1778485507238.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+            color: var(--text-main);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        body.light-mode {
+            background-image: 
+                linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(248,250,252,0.98)),
+                url('https://img2.pixhost.to/images/7816/724906139_alip-1778485507238.jpg');
+        }
+
+        .brand-font { 
+            font-family: 'Orbitron', sans-serif; 
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+
+        .nav-glass {
+            background: var(--glass-v3);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border-bottom: 1px solid var(--border-v3);
+            transition: all 0.5s ease;
+        }
+
+        .card-v3 {
+            background: var(--glass-v3);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid var(--border-v3);
+            box-shadow: 
+                0 4px 30px rgba(0, 0, 0, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.02);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            color: var(--text-main);
+        }
+
+        .card-v3:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 
+                0 30px 60px -12px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+
+        .badge-v3 {
+            background: rgba(128, 128, 128, 0.05);
+            border: 1px solid var(--border-v3);
+            backdrop-filter: blur(5px);
+            color: var(--text-main);
+        }
+
+        .btn-v3 {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        /* Glass Category Buttons */
+        .btn-outline-v3 {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .btn-outline-v3:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-v3.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Glass Title Effect */
+        .glass-title {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            position: relative;
+        }
+
+        /* Search Styles */
+        .search-container {
+            max-width: 500px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-v3);
+            border-radius: 100px;
+            padding: 14px 24px 14px 50px;
+            color: white;
+            font-size: 13px;
+            outline: none;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.3;
+            font-size: 14px;
+        }
+
+        #loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .loader-ring {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid var(--border-v3);
+        }
+
+        .loader-ring::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--text-main);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid var(--border-v3);
+            background: var(--glass-v3);
+            transition: all 0.3s ease;
+        }
+        
+        .image-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+    </style>
+</head>
+<body id="main-body" class="pb-24">
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="loader-ring"></div>
+        <div class="brand-font text-[10px] tracking-[0.5em] opacity-40">Synchronizing...</div>
+    </div>
+
+    <!-- Navigasi -->
+    <nav class="fixed top-0 w-full z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex items-center gap-4 cursor-pointer group" onclick="resetSearch()">
+                    <!-- Logo dipadamkan mengikut arahan -->
+                    <div class="flex flex-col">
+                        <span class="text-xl font-black tracking-tighter brand-font leading-none">HRZX<span style="opacity: 0.5; font-family: 'Space Grotesk'; letter-spacing: normal;"> STORE</span></span>
+                        <span class="text-[8px] font-bold tracking-[0.4em] opacity-40 uppercase">v2.3 stable</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div onclick="toggleTheme()" class="theme-toggle" title="Tukar Mode">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </div>
+                    <a href="https://wa.me/qr/SV2TNB7Y6HSUJ1" target="_blank" class="badge-v3 px-6 py-3 rounded-2xl font-bold text-[10px] tracking-widest uppercase flex items-center gap-2 hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-whatsapp text-green-500"></i> CONTACT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-56 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md opacity-60 text-[9px] font-bold uppercase tracking-[0.3em] mb-10">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Systems Operational
+            </div>
+            <h1 class="text-7xl md:text-9xl font-black mb-4 leading-none tracking-tighter uppercase brand-font glass-title">
+                HRZX
+            </h1>
+            <p class="text-[11px] font-bold uppercase tracking-[0.9em] opacity-30 mb-10">Update daily • Public Vault</p>
+            
+            <!-- Search Menu -->
+            <div class="search-container mb-12">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" class="search-input" placeholder="Cari prompt..." onkeyup="handleSearch()">
+            </div>
+
+            <!-- Glass Category Navigation -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterCategory('all')" id="btn-all" class="btn-outline-v3 active px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">Semua</button>
+                <button onclick="filterCategory('girl')" id="btn-girl" class="btn-outline-v3 px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">Girl</button>
+                <button onclick="filterCategory('boy')" id="btn-boy" class="btn-outline-v3 px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">Boy</button>
+                <button onclick="filterCategory('couple')" id="btn-couple" class="btn-outline-v3 px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest">Couple</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="max-w-7xl mx-auto px-6 min-h-[500px]">
+        <div id="prompt-grid" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"></div>
+        <div id="empty-state" class="hidden text-center py-40 card-v3 rounded-[3rem]">
+            <div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-white/10">
+                <i class="fa-solid fa-ghost text-3xl opacity-20"></i>
+            </div>
+            <p id="empty-message" class="opacity-40 font-bold tracking-[0.3em] uppercase italic">Kategori Ini Sedang Dikemaskini</p>
+        </div>
+    </main>
+
+    <!-- Quotes Footer -->
+    <section class="py-32 text-center overflow-hidden">
+        <h2 class="text-5xl md:text-8xl font-black opacity-5 italic uppercase tracking-tighter heading-font select-none">"The one for one"</h2>
+    </section>
+
+    <!-- Footer Info -->
+    <footer class="pb-20 px-6 text-center">
+        <div class="w-12 h-[1px] bg-gray-500/20 mx-auto mb-8"></div>
+        <p class="text-[9px] font-bold uppercase tracking-[0.6em] opacity-20">&copy; 2026 HRZX Digital Archive v2.3</p>
+    </footer>
+
+    <!-- Modal System -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/95 z-[70] hidden items-center justify-center p-4 backdrop-blur-2xl transition-all duration-500">
+        <div class="card-v3 rounded-[3rem] max-w-6xl w-full max-h-[90vh] overflow-y-auto relative border border-white/20 shadow-2xl">
+            <button onclick="closeModal()" class="fixed top-8 right-8 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center z-50 hover:scale-110 transition-transform font-bold shadow-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { 
+                id: 1, 
+                title: "Potret Wanita Tradisional (Ultra-Realistic)", 
+                category: "AI PHOTOGRAPHY", 
+                tag: "girl", 
+                image: "https://img2.pixhost.to/images/7795/724578462_alip-1778408046225.jpg", 
+                promptText: "Make a Picture Ultrarealistic\nSUBJECT: a woman\nANGLE: eye level handheld shot, medium-full body distance, slightly off-center framing, casual composition with a slight tilt as if taken quickly on a smartphone\nOUTFIT: white lace long-sleeved blouse, patterned batik wrap skirt in cream and dark maroon, thin matching sash around the waist, white leather flat shoes with a single strap\nPOSE: walking forward on a stone path, head tilted down looking at the ground, right hand reaching up to adjust her hair, relaxed and non-staged posture\nENVIRONMENT: outdoor courtyard with weathered concrete ground and bits of dirt, a house with a brown tiled roof in the background, large evergreen trees and bushes flanking the sides, grey overcast sky\nLIGHTING: flat natural outdoor lighting from a cloudy day, soft shadows on the ground, even exposure without strong highlights, colors appear slightly desaturated and natural like an unedited phone photo", 
+                description: "Dioptimumkan untuk Gemini AI. Fokus kepada butiran fabrik dan pencahayaan 'flat' untuk impak realistik yang tinggi." 
+            },
+            { 
+                id: 2, 
+                title: "Urban Girl Hoodie (Black & White)", 
+                category: "B&W CINEMATIC", 
+                tag: "girl", 
+                image: "https://img2.pixhost.to/images/7796/724601647_alip-1778413376881.jpg", 
+                promptText: "Make a Picture Ultrarealistic\nSUBJECT: a girl\nANGLE: Handheld eye-level close-up, slightly tilted. Tight framing, slight sensor noise, iPhone lens feel.\nOUTFIT: Dark hoodie with hood up. Flat-brim baseball cap with white logo worn over the hood.\nPOSE: Leaning back. Head tilted slightly. Hood edge covering the right eye. Neutral, relaxed facial expression.\nENVIRONMENT: Indoors, leaning against a gray pillow. Background wall shows circular graphic art.\nLIGHTING: Dim overhead light. Hard shadows under nose and chin. Black and white photo with natural grain in dark areas.", 
+                description: "Estetika hitam putih 'grainy' yang dioptimumkan khas untuk ChatGPT (DALL-E 3)." 
+            },
+            { 
+                id: 3, 
+                title: "Night City Girl (B&W Snapshot)", 
+                category: "STREET PHOTOGRAPHY", 
+                tag: "girl", 
+                image: "https://img2.pixhost.to/images/7807/724765485_alip-1778450554419.jpg", 
+                promptText: "Make a Picture Ultrarealistic\nSUBJECT: a girl\nANGLE: Eye level, medium close-up snapshot. The framing is slightly off-center and looks like it was captured quickly with a handheld mobile phone. There is a slight motion blur and noticeable digital grain typical of a nighttime mobile photo.\nOUTFIT: A thick black knit beanie pulled low, a dark heavy winter jacket with a visible circular button, and a black shirt with a thin white rim at the collar.\nPOSE: Standing on a sidewalk, leaning slightly toward the camera. He is smiling while holding up one hand in a middle finger gesture in the foreground. His posture is relaxed and casual, like a candid moment with friends.\nENVIRONMENT: A city sidewalk at night. A dark glass window of a shop is on the left side. Several other people are standing in the background, appearing blurry and out of focus. A city street with distant lights and building silhouettes stretches into the background.\nLIGHTING: Harsh, uneven artificial lighting from a street lamp. A strong shadow is cast by his hand across his eyes and the bridge of his nose. The image is in high-contrast black and white with grainy textures in the dark regions and some slight overexposure on the hand and forehead.", 
+                description: "Candid malam jalanan dengan simulasi optik telefon pintar. Dioptimumkan untuk ChatGPT." 
+            },
+            { 
+                id: 4, 
+                title: "Mirror Selfie Rock Sign (Ultra-Realistic)", 
+                category: "LIFESTYLE AI", 
+                tag: "boy", 
+                image: "https://img2.pixhost.to/images/7817/724916580_alip-1778488195811.jpg", 
+                promptText: "Make a Picture Ultrarealistic\nSUBJECT: a man\nANGLE: mirror selfie from a medium distance, handheld camera position with the smartphone visible in the frame, slightly tilted composition, casual framing with a slight motion blur\nOUTFIT: simple black cotton t-shirt, white fabric bracelet and a blue braided cord bracelet on the wrist\nPOSE: holding the phone with one hand to take the photo, using the other hand to make a rock on hand sign, looking into the mirror with a slight pout on the face, relaxed shoulders\nENVIRONMENT: a bathroom with a dark blue wall and white horizontal tiles on the bottom half, a framed black and white picture on the wall, part of a white toilet visible in the lower background\nLIGHTING: single overhead ceiling light source creating downward shadows, warm ambient indoor light, slight grain and noise in the darker areas of the image, bright reflection from the light fixture on the mirror surface", 
+                description: "Gaya selfie cermin yang sangat kasual dengan kesan 'smartphone' yang tulen. Menggunakan teknik pencahayaan siling tunggal untuk impak realistik." 
+            },
+            { 
+                id: 5, 
+                title: "Night City Couple Selfie", 
+                category: "COUPLE LIFESTYLE", 
+                tag: "couple", 
+                image: "https://img2.pixhost.to/images/7826/725062107_alip-1778520218723.jpg", 
+                promptText: "Make a Picture Ultrarealistic\nSUBJECT: a man and a woman\nANGLE: handheld front-facing camera selfie, close-up, slightly tilted and off-center, imperfect framing with heads filling the majority of the frame, slight wide-angle lens distortion\nOUTFIT: the man is in a dark blue cotton shirt and a grey backwards baseball cap; the woman is in a navy blue long-sleeve shirt with thick red stripes on the arms and large gold hoop earrings\nPOSE: leaning their heads together, looking at the camera lens, the woman is holding the phone with her arm extending toward the bottom of the frame, casual and relaxed facial expressions\nENVIRONMENT: outdoors on a city street at night, blurry asphalt and a dark vehicle in the background, distant street lamps creating soft spots of light, dark trees visible in the distance\nLIGHTING: warm orange street lighting from an overhead source, uneven exposure with grainy textures and low-light digital noise, slight motion blur, no flash, shadows are deep and unrefined", 
+                description: "Selfie pasangan di bandar waktu malam dengan kesan pencahayaan lampu jalan yang realistik dan 'digital noise' semula jadi." 
+            }
+        ];
+
+        let currentCategory = 'all';
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            body.classList.toggle('light-mode');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        function resetSearch() {
+            document.getElementById('search-input').value = '';
+            filterCategory('all');
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            filterCategory(currentCategory, query);
+        }
+
+        function filterCategory(category, query = '') {
+            currentCategory = category;
+            const grid = document.getElementById('prompt-grid');
+            const empty = document.getElementById('empty-state');
+            const emptyMsg = document.getElementById('empty-message');
+            
+            document.querySelectorAll('.btn-outline-v3').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            let filtered = category === 'all' ? [...products] : products.filter(p => p.tag === category);
+            
+            if (query) {
+                filtered = filtered.filter(p => 
+                    p.title.toLowerCase().includes(query) || 
+                    p.description.toLowerCase().includes(query) ||
+                    p.category.toLowerCase().includes(query)
+                );
+            }
+
+            filtered.reverse();
+            
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                empty.classList.remove('hidden');
+                emptyMsg.innerText = query ? "Prompt tidak dijumpai" : "Kategori Ini Sedang Dikemaskini";
+            } else {
+                grid.classList.remove('hidden');
+                empty.classList.add('hidden');
+                renderGrid(filtered);
+            }
+        }
+
+        function renderGrid(items) {
+            const grid = document.getElementById('prompt-grid');
+            grid.innerHTML = items.map(p => `
+                <div class="card-v3 rounded-[2.5rem] group cursor-pointer" onclick="openModal(${p.id})">
+                    <div class="h-48 md:h-80 overflow-hidden relative image-mask">
+                        <img src="${p.image}" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4 badge-v3 px-3 py-1 rounded-full text-[8px] font-bold uppercase tracking-widest border border-white/10">${p.tag}</div>
+                    </div>
+                    <div class="p-6 md:p-10 -mt-4 relative z-10">
+                        <span class="text-[8px] font-bold uppercase tracking-[0.2em] mb-2 block opacity-30">${p.category}</span>
+                        <h3 class="font-bold text-sm md:text-xl mb-6 leading-tight line-clamp-2 heading-font">${p.title}</h3>
+                        <div class="flex justify-between items-center pt-6 border-t border-white/5">
+                            <span class="text-[7px] font-bold opacity-20 uppercase tracking-widest">ARC_${p.id.toString().padStart(3, '0')}</span>
+                            <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors shadow-lg">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openModal(id) {
+            const p = products.find(x => x.id === id);
+            document.getElementById('modal-content').innerHTML = `
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 p-4 md:p-8">
+                        <div class="relative rounded-[2.5rem] overflow-hidden border border-white/10 h-full min-h-[400px] shadow-2xl">
+                            <img src="${p.image}" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 p-8 md:p-16 flex flex-col">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="w-2 h-2 rounded-full bg-current"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40">${p.category}</span>
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-black mb-8 leading-none tracking-tighter heading-font">${p.title}</h2>
+                        <p class="opacity-40 mb-12 leading-relaxed text-base font-medium">${p.description}</p>
+                        <div class="mb-12 p-8 bg-white/5 rounded-[2rem] border border-white/10 backdrop-blur-xl">
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-[9px] font-black opacity-20 uppercase">Source Prompt</span>
+                                <button onclick="copyPrompt()" class="btn-v3 px-8 py-3 rounded-xl text-[9px] uppercase tracking-widest">Salin Prompt</button>
+                            </div>
+                            <div class="text-[13px] font-mono whitespace-pre-wrap max-h-64 overflow-y-auto leading-relaxed opacity-70 p-2" id="prompt-code">${p.promptText}</div>
+                        </div>
+                        <button onclick="closeModal()" class="mt-auto w-full py-6 rounded-2xl border border-white/10 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white/5 transition-all">Close Archive</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-overlay').classList.replace('hidden', 'flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function copyPrompt() {
+            const code = document.getElementById('prompt-code').innerText;
+            const el = document.createElement('textarea'); el.value = code;
+            document.body.appendChild(el); el.select();
+            document.execCommand('copy'); document.body.removeChild(el);
+            const btn = document.querySelector('.lg\\:w-1\\/2 .btn-v3');
+            btn.innerText = 'Tersalin!';
+            setTimeout(() => { btn.innerText = 'Salin Prompt'; }, 2000);
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.replace('flex', 'hidden');
+            document.body.style.overflow = 'auto';
+            const loader = document.getElementById('loading-overlay');
+            loader.style.display = 'flex';
+            setTimeout(() => { loader.style.display = 'none'; }, 800);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            filterCategory('all');
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
+
