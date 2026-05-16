@@ -1,825 +1,282 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App Details - Berry Mod Apeka</title>
-    <meta name="description"
-        content="Download aplikasi mod aman dan terbaru di Berry Mod Apeka. Gratis dan tanpa virus.">
-    <meta name="author" content="BERRY V4">
-    <link rel="canonical" href="/App-Detail/">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="id">
-    <meta property="og:title" content="App Details - Berry Mod Apeka" />
-    <meta property="og:description" content="Download aplikasi mod aman dan terbaru di Berry Mod Apeka.">
-    <meta property="og:image" content="https://databaseimgberry.edgeone.app/berry_113.png">
-    <meta property="og:url" content="https://berrymodapk.edgeone.app/App-Detail/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Berry Mod Apeka">
-    <meta name="nav-active" content="Apps">
-    <meta name="theme-color" content="#0a0f1a">
-    <link rel="manifest" href="../site.webmanifest">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-    <link rel="icon" href="../favicon.ico" sizes="any">
-    <link rel="icon" href="../favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRZX PROMPT - Cyber Aesthetic</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <script src="../assets/js/optimize.js" defer></script>
-    <script>
-        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(err => console.warn('Worker gagal:', err));
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/font-awesome.min.css">
     <style>
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #02040a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, #0f172a 0%, transparent 50%);
+            color: #f8fafc;
+            min-height: 100vh;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 10px;
+        .header-font {
+            font-family: 'Syncopate', sans-serif;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transition: all 0.3s;
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.05);
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(59, 130, 246, 0.5);
+        .cyber-btn {
+            background: linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cyber-btn:hover:not(:disabled) {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .cyber-btn:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+
+        .loader {
+            border: 2px solid rgba(14, 165, 233, 0.1);
+            border-radius: 50%;
+            border-top: 2px solid #0ea5e9;
+            width: 24px;
+            height: 24px;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .prompt-container {
+            background: rgba(2, 6, 23, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: inset 0 0 15px rgba(14, 165, 233, 0.1);
+        }
+
+        .upload-area {
+            background: rgba(30, 41, 59, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            border-color: #0ea5e9;
+            background: rgba(14, 165, 233, 0.05);
+        }
+
+        .cyber-accent {
+            color: #38bdf8;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
         }
     </style>
 </head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
 
-<body class="overflow-x-hidden selection:bg-blue-500 selection:text-white">
-    <div id="sidebar-container"></div>
-    <div id="topbar-container"></div>
-    <div class="sm:ml-64 mt-16 pt-8 px-4 pb-4">
-        <nav class="flex mb-4" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li class="inline-flex items-center">
-                    <a href="../index.html"
-                        class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-white"><i
-                            class="fa-solid fa-house text-xs mr-2"></i>Home</a>
-                </li>
-                <li>
-                    <div class="flex items-center"><i
-                            class="fa-solid fa-chevron-right text-slate-600 text-[10px] mx-2"></i><a href="../Apps/"
-                            class="text-sm font-medium text-slate-400 hover:text-white">Apps</a></div>
-                </li>
-                <li>
-                    <div class="flex items-center"><i
-                            class="fa-solid fa-chevron-right text-slate-600 text-[10px] mx-2"></i><span
-                            class="text-sm font-medium text-slate-200" id="breadcrumb-app-name">Loading...</span></div>
-                </li>
-            </ol>
-        </nav>
-        <div id="app-content" class="max-w-[1240px] mx-auto hidden lg:px-4">
-            <div id="admin-panel"
-                class="hidden bg-slate-900/50 rounded-2xl p-6 border-2 border-blue-500/50 mb-6 shadow-2xl backdrop-blur-md">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center border border-blue-500/30">
-                            <i class="fa-solid fa-user-shield text-blue-400"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-sm font-bold text-white uppercase tracking-widest">Admin Control</h2>
-                            <p class="text-[10px] text-slate-500 font-medium">Auto Copy Format for Social Channels</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 w-full md:w-auto">
-                        <button id="copy-wa-btn"
-                            class="flex-1 md:w-40 flex items-center justify-center gap-2 py-3 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 rounded-xl hover:bg-[#25D366]/20 active:scale-95 transition-all text-xs font-black uppercase"><i
-                                class="fab fa-whatsapp text-sm"></i> WhatsApp</button>
-                        <button id="copy-tg-btn"
-                            class="flex-1 md:w-40 flex items-center justify-center gap-2 py-3 bg-[#0088cc]/10 text-[#0088cc] border border-[#0088cc]/30 rounded-xl hover:bg-[#0088cc]/20 active:scale-95 transition-all text-xs font-black uppercase"><i
-                                class="fab fa-telegram-plane text-sm"></i> Telegram</button>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="bg-[var(--bg-panel)] rounded-2xl p-5 md:p-8 mb-6 shadow-xl border border-[var(--border-color)] flex flex-col md:flex-row gap-6 items-center md:items-start relative overflow-hidden group">
-                <div
-                    class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-600/10 to-transparent md:hidden pointer-events-none">
-                </div>
-                <img id="app-icon" src="" alt="App Icon"
-                    class="w-28 h-28 md:w-32 md:h-32 rounded-2xl shadow-2xl bg-[var(--bg-root)] object-cover z-[1] ring-1 ring-white/10">
-                <div class="flex-1 text-center md:text-left w-full z-[1]">
-                    <h1 id="app-name"
-                        class="text-2xl md:text-4xl font-black text-[var(--text-main)] mb-1 tracking-tight leading-tight">
-                        App Name</h1>
-                    <a id="app-developer" href="#"
-                        class="text-blue-400 hover:underline font-medium text-sm mb-4 inline-flex items-center gap-1.5 group/dev"><span>Developer</span><span
-                            class="material-icons-outlined text-[14px] opacity-0 group-hover/dev:opacity-100 transition-opacity">search</span></a>
-                    <div
-                        class="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-6 text-xs md:text-sm text-[var(--text-dim)] mb-6 bg-[var(--bg-root)]/50 p-3 rounded-xl border border-[var(--border-color)] backdrop-blur-sm inline-flex">
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-icons-outlined text-blue-500 text-sm">info</span> v<span
-                                id="app-version">1.0</span></span>
-                        <div class="w-px h-3 bg-[var(--border-color)]"></div>
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-icons-outlined text-purple-500 text-sm">sd_storage</span> <span
-                                id="app-size">0 MB</span></span>
-                        <div class="w-px h-3 bg-[var(--border-color)]"></div>
-                        <span class="flex items-center gap-1.5"><span
-                                class="material-icons-outlined text-green-500 text-sm">calendar_today</span> <span
-                                id="app-date">Jan 1, 2024</span></span>
-                    </div>
-                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 mb-6">
-                        <span id="vip-badge"
-                            class="hidden bg-yellow-500/10 text-yellow-400 border border-yellow-500/40 text-[10px] font-bold px-2.5 py-1.5 rounded-lg uppercase tracking-wider whitespace-nowrap">VIP
-                            ONLY</span>
-                        <span id="new-badge"
-                            class="hidden bg-green-500 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg uppercase tracking-wider whitespace-nowrap">NEW
-                            UPDATE</span>
-                        <span id="soon-badge"
-                            class="hidden bg-yellow-500/10 text-yellow-400 border border-yellow-500/40 text-[10px] font-bold px-2.5 py-1.5 rounded-lg uppercase tracking-wider whitespace-nowrap">COMING
-                            SOON</span>
-                        <div
-                            class="flex items-center gap-1.5 bg-[var(--bg-root)]/50 px-2.5 py-1.5 rounded-lg border border-[var(--border-color)] whitespace-nowrap">
-                            <span id="star-display" class="text-sm font-bold text-[var(--text-main)]">0.0</span><span
-                                class="material-icons-outlined text-yellow-400 text-sm">star</span>
-                        </div>
-                        <div
-                            class="flex items-center gap-1.5 bg-[var(--bg-root)]/50 px-2.5 py-1.5 rounded-lg border border-[var(--border-color)] whitespace-nowrap">
-                            <span id="view-display" class="text-sm font-bold text-[var(--text-main)]">0</span><span
-                                class="material-icons-outlined text-blue-400 text-sm">visibility</span>
-                        </div>
-                        <span class="text-[var(--text-dim)] text-[11px] whitespace-nowrap">(<span
-                                id="rating-count">0</span> reviews)</span>
-                    </div>
-                    <div class="flex flex-col gap-3 w-full md:w-auto md:min-w-[350px]">
-                        <div class="flex flex-col gap-2 w-full">
-                            <button id="download-btn"
-                                class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-blue-600/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2 w-full group"><span
-                                    class="material-icons-outlined group-hover:animate-bounce">download</span><span>Download
-                                    Now</span></button>
-                            <div class="text-center w-full">
-                                <button id="how-to-download-btn"
-                                    class="text-xs text-[var(--text-dim)] hover:text-white underline decoration-[var(--border-color)] hover:decoration-blue-500 underline-offset-4 transition-all">How
-                                    To Download?</button>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                            <button id="share-btn"
-                                class="flex-1 min-w-[110px] bg-[var(--bg-root)] hover:bg-[var(--bg-root)]/80 text-[var(--text-main)] font-bold py-3 sm:py-3.5 px-3 rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 border border-[var(--border-color)] backdrop-blur-sm group">
-                                <i
-                                    class="fa-solid fa-share-nodes text-xs sm:text-sm text-blue-400 group-hover:rotate-12 transition-transform"></i>
-                                <span class="text-[11px] sm:text-sm">Share</span>
-                            </button>
-                            <button id="request-update-btn"
-                                class="flex-1 min-w-[130px] bg-[var(--bg-root)] hover:bg-[var(--bg-root)]/80 text-[var(--text-main)] font-bold py-3 sm:py-3.5 px-3 rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 border border-[var(--border-color)] backdrop-blur-sm group">
-                                <i
-                                    class="fa-solid fa-rotate text-xs sm:text-sm text-yellow-500 group-hover:rotate-180 transition-transform duration-500"></i>
-                                <span class="text-[11px] sm:text-sm">Request Update</span>
-                            </button>
-                            <a id="playstore-btn" href="#" target="_blank"
-                                class="hidden flex-1 min-w-[110px] bg-[var(--bg-root)] hover:bg-[var(--bg-root)]/80 text-[var(--text-main)] font-bold py-3 sm:py-3.5 px-3 rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 border border-[var(--border-color)] backdrop-blur-sm">
-                                <i class="fab fa-google-play text-xs sm:text-sm text-green-400"></i>
-                                <span class="text-[11px] sm:text-sm">Play Store</span>
-                            </a>
-                        </div>
-                    </div>
-                    <p id="download-msg"
-                        class="text-xs text-red-400 mt-3 hidden text-center md:text-left bg-red-500/10 p-2 rounded border border-red-500/20">
-                    </p>
-                </div>
-            </div>
-            <div id="app-grid-layout" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div id="description-column" class="lg:col-span-2 flex flex-col order-2 lg:order-1">
-                    <div
-                        class="bg-[var(--bg-panel)] rounded-xl p-6 border border-[var(--border-color)] flex-1 flex flex-col">
-                        <h2
-                            class="text-xl font-bold mb-4 text-[var(--text-main)] border-b border-[var(--border-color)] pb-2">
-                            Description</h2>
-                        <div class="relative flex-1">
-                            <div id="app-description"
-                                class="text-[var(--text-dim)] whitespace-pre-line leading-relaxed overflow-hidden transition-all duration-500">
-                                Loading description...</div>
-                            <div id="read-more-overlay"
-                                class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[var(--bg-panel)] to-transparent flex items-end justify-center pb-2 hidden">
-                                <button onclick="toggleDescription()"
-                                    class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transition-all flex items-center gap-1">Baca
-                                    selengkapnya... <span
-                                        class="material-icons-outlined text-sm">expand_more</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="sidebar-column" class="space-y-6 order-1 lg:order-2">
-                    <div class="bg-[var(--bg-panel)] rounded-xl p-6 border border-[var(--border-color)]">
-                        <h2 class="text-xl font-bold mb-4 text-[var(--text-main)]">Rate App</h2>
-                        <div class="flex justify-center gap-2 text-2xl text-[var(--text-dim)]" id="rating-stars">
-                            <button data-val="1" class="hover:text-yellow-400 transition"><span
-                                    class="material-icons-outlined">star</span></button>
-                            <button data-val="2" class="hover:text-yellow-400 transition"><span
-                                    class="material-icons-outlined">star</span></button>
-                            <button data-val="3" class="hover:text-yellow-400 transition"><span
-                                    class="material-icons-outlined">star</span></button>
-                            <button data-val="4" class="hover:text-yellow-400 transition"><span
-                                    class="material-icons-outlined">star</span></button>
-                            <button data-val="5" class="hover:text-yellow-400 transition"><span
-                                    class="material-icons-outlined">star</span></button>
-                        </div>
-                        <p id="user-rating-msg" class="text-center text-xs mt-2 text-[var(--text-dim)]">Tap to rate</p>
-                    </div>
-                    <div class="bg-[var(--bg-panel)] rounded-xl p-6 border border-[var(--border-color)]">
-                        <h2 class="text-xl font-bold mb-4 text-[var(--text-main)] flex items-center gap-2"><span
-                                class="material-icons-outlined text-blue-500">verified_user</span> App Info</h2>
-                        <ul class="space-y-4 text-sm">
-                            <li class="flex flex-col gap-1 border-b border-[var(--border-color)] pb-3"><span
-                                    class="text-[var(--text-dim)] text-xs uppercase tracking-wider font-semibold">Package
-                                    Name</span><span id="app-package"
-                                    class="text-[var(--text-main)] font-bold text-xs break-all bg-[var(--bg-root)]/50 p-2 rounded border border-[var(--border-color)]"></span>
-                            </li>
-                            <li class="flex flex-col gap-2 border-b border-[var(--border-color)] pb-3"><span
-                                    class="text-[var(--text-dim)] text-xs uppercase tracking-wider font-semibold">Mod
-                                    Features</span>
-                                <ul id="mod-features-list" class="space-y-1">
-                                    <li class="text-[var(--text-dim)] italic text-xs">No mod info</li>
-                                </ul>
-                            </li>
-                            <li class="flex justify-between items-center pt-1"><span
-                                    class="text-[var(--text-dim)] text-xs uppercase tracking-wider font-semibold">Encryption</span><span
-                                    id="app-encryption"
-                                    class="px-2 py-0.5 rounded text-xs font-bold bg-red-500/10 text-red-400 border border-red-500/20">None</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="smart-recommended-container"
-                        class="bg-[var(--bg-panel)] rounded-2xl p-6 border border-[var(--border-color)] shadow-xl relative">
-                        <div
-                            class="absolute -top-10 -right-10 w-24 h-24 bg-blue-600/10 rounded-full blur-2xl pointer-events-none">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="max-w-2xl w-full space-y-8">
+        <!-- App Header -->
+        <div class="text-center space-y-2">
+            <h1 class="header-font text-2xl md:text-4xl font-bold tracking-[0.3em] cyber-accent">
+                HRZX PROMPT
+            </h1>
+            <p class="text-slate-400 text-[10px] uppercase tracking-[0.5em] font-semibold">
+                iPhone Realistic Prompt Engine
+            </p>
         </div>
-        <div id="loading-spinner" class="flex justify-center items-center h-64">
-            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-    </div>
-    <!-- Versions Modal (Premium Bottom Sheet) -->
-    <div id="versions-modal"
-        class="fixed inset-0 z-[110] bg-black/60 backdrop-blur-md hidden items-end justify-center sm:items-center p-0 sm:p-4 transition-all duration-300 opacity-0">
-        <div class="bg-[#050505]/90 border-t sm:border border-white/10 rounded-t-[2.5rem] sm:rounded-[2rem] p-8 w-full max-w-lg shadow-[0_-20px_50px_rgba(0,0,0,0.5)] relative transition-all duration-500 transform translate-y-full sm:translate-y-10"
-            id="versions-modal-content">
-            <!-- Handle for mobile -->
-            <div class="w-12 h-1.5 bg-white/10 rounded-full mx-auto mb-6 sm:hidden"></div>
 
-            <button id="close-versions-modal"
-                class="absolute top-6 right-6 text-white/30 hover:text-white transition-colors bg-white/5 p-2 rounded-full">
-                <span class="material-icons-outlined text-xl">close</span>
+        <!-- Main Workspace -->
+        <div class="glass-card rounded-[2rem] p-6 md:p-10 shadow-2xl space-y-8 relative overflow-hidden">
+            <!-- Decorative Light Flare -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[80px]"></div>
+            
+            <!-- Image Input -->
+            <div id="dropArea" class="upload-area relative border border-slate-800 rounded-2xl p-8 text-center cursor-pointer group">
+                <input type="file" id="fileInput" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*">
+                
+                <div id="emptyState" class="space-y-4">
+                    <div class="w-16 h-16 bg-slate-900/50 rounded-full flex items-center justify-center mx-auto border border-blue-500/20 group-hover:border-blue-500/50 transition-all">
+                        <i class="fa-solid fa-cloud-arrow-up text-blue-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-200 font-bold uppercase tracking-widest">Upload Reference Image</p>
+                        <p class="text-xs text-slate-500 mt-1">Tap to select or drag & drop</p>
+                    </div>
+                </div>
+
+                <div id="previewState" class="hidden">
+                    <img id="imgDisplay" src="#" alt="Preview" class="mx-auto rounded-xl max-h-56 shadow-2xl border border-blue-500/30">
+                    <div class="mt-4 flex items-center justify-center gap-2 text-[10px] text-blue-400 font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-sync"></i> Replace Image
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="actionBtn" disabled class="cyber-btn w-full py-5 rounded-2xl font-black text-xs tracking-[0.3em] uppercase disabled:opacity-20 disabled:grayscale disabled:cursor-not-allowed">
+                Generate Structured Prompt
             </button>
 
-            <div class="flex items-center gap-4 mb-8">
-                <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center">
-                    <span class="material-icons-outlined text-blue-500 text-2xl">history</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-white tracking-tight">Select Version</h3>
-                    <p class="text-xs text-white/40 uppercase tracking-[0.2em] font-bold">Version History</p>
-                </div>
+            <!-- Loading UI -->
+            <div id="loadingIndicator" class="hidden flex flex-col items-center justify-center gap-4 py-6">
+                <div class="loader"></div>
+                <span class="text-[10px] font-black tracking-[0.3em] uppercase text-blue-400 animate-pulse">Analyzing Visual Data</span>
             </div>
 
-            <div id="versions-list-container"
-                class="flex flex-col gap-4 max-h-[60vh] overflow-y-auto custom-scrollbar pr-2">
-                <!-- Versions injected via JS -->
-            </div>
-
-            <div
-                class="mt-8 pt-6 border-t border-white/5 flex items-center justify-center gap-2 text-[10px] text-white/20 font-bold uppercase tracking-widest">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-                Secure Cloud Download System
-            </div>
-        </div>
-    </div>
-    <div id="share-modal"
-        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div
-            class="bg-[var(--bg-panel)] border border-[var(--border-color)] rounded-2xl p-6 w-full max-w-sm shadow-2xl relative">
-            <button id="close-share-modal" class="absolute top-4 right-4 text-[var(--text-dim)] hover:text-white"><span
-                    class="material-icons-outlined">close</span></button>
-            <h3 class="text-xl font-bold text-[var(--text-main)] mb-6 flex items-center gap-2"><span
-                    class="material-icons-outlined text-blue-500">share</span>Bagikan Aplikasi</h3>
-            <div class="flex flex-col items-center gap-6">
-                <div class="p-4 bg-white rounded-2xl shadow-inner group relative">
-                    <div id="qr-loading" class="absolute inset-0 flex items-center justify-center bg-white rounded-2xl">
-                        <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-                    </div>
-                    <img id="qr-code-img" src="" alt="QR" class="w-48 h-48 opacity-0 transition-opacity">
+            <!-- Results -->
+            <div id="resultBox" class="hidden space-y-6">
+                <div class="flex items-center justify-between border-b border-blue-500/20 pb-4">
+                    <span class="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em]">Extracted Prompt</span>
+                    <button id="copyBtn" class="flex items-center gap-2 text-[10px] font-black bg-blue-500/10 text-blue-400 px-4 py-2 rounded-lg border border-blue-500/30 hover:bg-blue-500/20 transition-all uppercase">
+                        <i class="fa-regular fa-copy"></i> Copy Prompt
+                    </button>
                 </div>
-                <p class="text-[var(--text-dim)] text-center text-[10px] uppercase tracking-widest font-mono">Scan QR
-                    code untuk membuka di perangkat lain.</p>
-                <div class="w-full space-y-2">
-                    <label class="text-[10px] font-bold text-[var(--text-dim)] uppercase tracking-wider font-mono">Share
-                        Link</label>
-                    <div class="flex gap-2">
-                        <input type="text" id="share-link-input" readonly
-                            class="flex-1 bg-[var(--bg-root)] border border-[var(--border-color)] rounded-xl px-4 py-2 text-xs text-[var(--text-dim)] focus:outline-none font-mono">
-                        <button id="copy-link-btn"
-                            class="bg-blue-600 hover:bg-blue-500 text-white px-3 rounded-xl transition-all active:scale-95"><span
-                                class="material-icons-outlined text-sm">content_copy</span></button>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-3 w-full">
-                    <button id="download-qr-btn"
-                        class="flex items-center justify-center gap-2 py-3 bg-[var(--bg-root)] border border-[var(--border-color)] text-[var(--text-main)] rounded-xl transition-all text-xs font-bold"><span
-                            class="material-icons-outlined text-sm">download</span>SIMPAN</button>
-                    <button id="open-whatsapp-btn"
-                        class="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-xl transition-all text-xs font-bold"><i
-                            class="fab fa-whatsapp"></i>WHATSAPP</button>
+                
+                <div id="promptContent" class="prompt-container p-6 rounded-2xl text-xs md:text-sm font-mono text-blue-100 leading-relaxed whitespace-pre-wrap border border-blue-500/10"></div>
+                
+                <div id="copySuccess" class="hidden text-center text-[10px] font-bold text-cyan-400 uppercase tracking-widest animate-bounce">
+                    <i class="fa-solid fa-check-circle mr-2"></i>Copied to clipboard
                 </div>
             </div>
         </div>
-    </div>
-    <div id="tutorial-modal"
-        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div
-            class="bg-[var(--bg-panel)] border border-[var(--border-color)] rounded-2xl p-6 w-full max-w-[650px] shadow-2xl relative">
-            <button id="close-tutorial-modal"
-                class="absolute top-4 right-4 text-[var(--text-dim)] hover:text-white z-10"><span
-                    class="material-icons-outlined">close</span></button>
-            <h3 class="text-xl font-bold text-[var(--text-main)] mb-4 flex items-center gap-2"><span
-                    class="material-icons-outlined text-blue-500">play_circle</span>Tutorial Download</h3>
-            <div
-                class="flex justify-center w-full rounded-xl border border-[var(--border-color)] bg-black/80 overflow-hidden max-h-[75vh] md:max-h-[80vh]">
-                <video id="tutorial-video"
-                    class="w-full max-w-[360px] max-h-full object-contain outline-none rounded-lg" controls playsinline
-                    preload="metadata">
-                    <source src="https://tutor-berrymodapk.edgeone.app/ssstik.io_1775217911993.mp4" type="video/mp4">
-                    Browser Anda tidak mendukung label video.
-                </video>
-            </div>
+
+        <div class="flex justify-center items-center gap-4 opacity-30">
+            <div class="h-[1px] w-12 bg-blue-500"></div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400">Vision System v2.5</p>
+            <div class="h-[1px] w-12 bg-blue-500"></div>
         </div>
     </div>
-    <script type="module">
-        import { initAuth, state } from '../assets/js/auth.js';
-        import { renderLayout } from '../assets/js/layout.js';
-        import { initMobileOptimizations } from '../assets/js/mobile.js';
-        import { rtdb, ref, get, set, update, runTransaction } from '../assets/js/firebase-config.js';
-        import { showAlert } from '../assets/js/alert.js';
-        import { setupRatingAlert } from '../assets/js/alert-rating.js';
-        import { initSmartRecommendations } from '../assets/js/smart-recommended.js';
-        import { injectHighlighter } from '../assets/js/highlight.js';
-        renderLayout('apps', '../'); initMobileOptimizations();
-        async function incrementVisitors(id) {
-            if (sessionStorage.getItem(`visited_${id}`)) return;
-            try { await runTransaction(ref(rtdb, `apps/${id}/views`), (v) => (v || 0) + 1); sessionStorage.setItem(`visited_${id}`, 'true'); const display = document.getElementById('view-display'); if (display) display.textContent = (parseInt(display.textContent) || 0) + 1; } catch (e) { console.error(e); }
-        }
-        window.addEventListener('load', () => { const loader = document.getElementById('static-loader'), wrapper = document.getElementById('main-wrapper'); if (loader) loader.style.display = 'none'; if (wrapper) wrapper.style.opacity = '1'; });
-        const appId = new URLSearchParams(window.location.search).get('id'); let currentApp = null; let userAppRating = null; let isDownloading = false;
-        if (!appId) window.location.href = '../Apps/'; else loadAppDetails();
-        initAuth(async (user, role) => { if (user && currentApp) checkUserRating(currentApp.id); if (role === 'admin') initAdminTools(role); });
-        async function initAdminTools() { const panel = document.getElementById('admin-panel'); if (panel) { panel.classList.remove('hidden'); try { const res = await fetch('format.json'); const formats = await res.json(); document.getElementById('copy-wa-btn').onclick = () => copyFormat(formats.whatsapp); document.getElementById('copy-tg-btn').onclick = () => copyFormat(formats.telegram); } catch (e) { console.error(e); } } }
-        const toFancy = (t) => {
-            const b = { 'A': '𝘼', 'B': '𝘽', 'C': '𝘾', 'D': '𝘿', 'E': '𝙀', 'F': '𝙁', 'G': '𝙂', 'H': '𝙃', 'I': '𝙄', 'J': '𝙅', 'K': '𝙆', 'L': '𝙇', 'M': '𝙈', 'N': '𝙉', 'O': '𝙊', 'P': '𝙋', 'Q': '𝙌', 'R': '𝙍', 'S': '𝙎', 'T': '𝙏', 'U': '𝙐', 'V': '𝙑', 'W': '𝙒', 'X': '𝙓', 'Y': '𝙔', 'Z': '𝙕', 'a': '𝙖', 'b': '𝙗', 'c': '𝙘', 'd': '𝙙', 'e': '𝙚', 'f': '𝙛', 'g': '𝙜', 'h': '𝙝', 'i': '𝙞', 'j': '𝙟', 'k': '𝙠', 'l': '𝙡', 'm': '𝙢', 'n': '𝙣', 'o': '𝙤', 'p': '𝙥', 'q': '𝙦', 'r': '𝙧', 's': '𝙨', 't': '𝙩', 'u': '𝙪', 'v': '𝙫', 'w': '𝙬', 'x': '𝙭', 'y': '𝙮', 'z': '𝙯', '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗' };
-            return t.split('').map(c => b[c] || c).join('');
-        };
-        function copyFormat(temp) {
-            if (!currentApp) return;
-            const feats = currentApp.modFeatures ? currentApp.modFeatures.split('\n').filter(f => f.trim()).map(f => `* ${f.trim().replace(/^- /, '')}`).join('\n') : '* Unlocked', date = new Date(currentApp.releaseTime || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-            let desc = (currentApp.description || '').split('\n')[0]; if (desc.length > 80) desc = desc.substring(0, 77) + '...';
-            const text = temp.replace(/{appName}/g, toFancy(currentApp.appName)).replace(/{description}/g, desc).replace(/{dateUpdate}/g, date).replace(/{size}/g, currentApp.size).replace(/{version}/g, currentApp.version).replace(/{build}/g, currentApp.encryption || 'Arm64-v8a').replace(/{modFeatures}/g, feats).replace(/{appId}/g, currentApp.id).replace(/{playStoreUrl}/g, currentApp.playStoreUrl || ' - ');
-            navigator.clipboard.writeText(text).then(() => showAlert("Format copied!", "success")).catch(() => { const sel = document.createElement('textarea'); sel.value = text; document.body.appendChild(sel); sel.select(); document.execCommand('copy'); document.body.removeChild(sel); showAlert("Format copied!", "success"); });
-        }
-        async function loadAppDetails() {
-            try { const snap = await get(ref(rtdb, "apps/" + appId)); if (snap.exists()) { currentApp = snap.val(); currentApp.id = snap.key; renderApp(currentApp); incrementVisitors(appId); initSmartRecommendations(appId, 'smart-recommended-container', currentApp.category); } else { showAlert("Not found!", "error"); setTimeout(() => window.location.href = '../Apps/', 2000); } }
-            catch (e) { console.error(e); document.getElementById('loading-spinner').classList.add('hidden'); document.getElementById('app-content').innerHTML = '<p class="text-center p-10 text-red-400">Failed to load apps.</p>'; document.getElementById('app-content').classList.remove('hidden'); }
-        }
-        function updateStarUI(r) { document.querySelectorAll('#rating-stars button').forEach((btn, i) => { const s = btn.querySelector('span'); if (i < r) { btn.classList.remove('text-[var(--text-dim)]'); btn.classList.add('text-yellow-400'); } else { btn.classList.add('text-[var(--text-dim)]'); btn.classList.remove('text-yellow-400'); } }); }
-        async function checkUserRating(id) { if (state.user) try { const snap = await get(ref(rtdb, `apps/${id}/ratings/${state.user.uid}`)); if (snap.exists()) { userAppRating = snap.val().rating; updateStarUI(userAppRating); } } catch (e) { console.error(e); } }
-        function renderApp(app) {
-            const icon = app.iconUrl || 'https://via.placeholder.com/128', title = `${app.appName} - Berry Mod`, desc = app.description || 'Modded App';
-            document.getElementById('loading-spinner').classList.add('hidden'); document.getElementById('app-content').classList.remove('hidden'); document.title = title;
-            document.querySelectorAll('link[rel*="icon"]').forEach(el => el.href = icon);
-            ['og:title', 'og:description', 'og:image', 'og:url'].forEach(p => { const el = document.querySelector(`meta[property="${p}"]`); if (el) el.content = p === 'og:image' ? icon : (p === 'og:title' ? title : (p === 'og:description' ? desc : window.location.href)); });
-            document.getElementById('app-icon').src = icon; document.getElementById('app-name').textContent = app.appName;
-            const breadCat = document.getElementById('breadcrumb-category');
-            if (breadCat) { breadCat.textContent = (app.category || 'Category').toUpperCase(); breadCat.href = `../Apps/?category=${encodeURIComponent(app.category)}`; }
-            document.getElementById('breadcrumb-app-name').textContent = app.appName;
-            const dev = document.getElementById('app-developer'); if (dev) { const s = dev.querySelector('span'); if (s) s.textContent = app.developer; dev.href = `../Dev/?dev=${encodeURIComponent(app.developer)}`; }
-            document.getElementById('app-version').textContent = app.version; document.getElementById('app-size').textContent = app.size; document.getElementById('app-date').textContent = new Date(app.releaseTime).toLocaleDateString();
-            injectHighlighter('app-description', app.description); document.getElementById('app-encryption').textContent = app.encryption || 'None'; document.getElementById('app-package').textContent = app.package || 'N/A';
-            document.getElementById('star-display').textContent = app.ratingAvg ? app.ratingAvg.toFixed(1) : '0.0'; document.getElementById('rating-count').textContent = app.ratingCount || 0; document.getElementById('view-display').textContent = app.views || 0;
-            const featList = document.getElementById('mod-features-list'); featList.innerHTML = '';
-            if (app.modFeatures) app.modFeatures.split('\n').filter(f => f.trim()).forEach(f => { const li = document.createElement('li'); li.className = "flex items-start gap-2 text-green-400 text-xs"; li.innerHTML = `<span class="material-icons-outlined text-[14px] mt-0.5">check_circle</span><span>${f.trim().replace(/^- /, '')}</span>`; featList.appendChild(li); });
-            else featList.innerHTML = '<li class="text-green-400 flex items-center gap-2 text-xs"><span class="material-icons-outlined text-[14px]">lock_open</span> Unlocked</li>';
-            if (app.isVip) document.getElementById('vip-badge').classList.remove('hidden'); if (app.showNewLabel || (Date.now() - new Date(app.releaseTime).getTime()) < 7 * 864e5) document.getElementById('new-badge').classList.remove('hidden');
-            if (app.isComingSoon) {
-                document.getElementById('soon-badge').classList.remove('hidden');
-                const dlBtn = document.getElementById('download-btn');
-                dlBtn.classList.replace('bg-blue-600', 'bg-slate-700');
-                dlBtn.classList.replace('hover:bg-blue-500', 'hover:bg-slate-600');
-                dlBtn.querySelector('span:last-child').textContent = 'Coming Soon';
-                dlBtn.querySelector('span:first-child').textContent = 'hourglass_empty';
+
+    <script>
+        const apiKey = ""; // Disuntikkan sistem
+        const fileInput = document.getElementById('fileInput');
+        const actionBtn = document.getElementById('actionBtn');
+        const emptyState = document.getElementById('emptyState');
+        const previewState = document.getElementById('previewState');
+        const imgDisplay = document.getElementById('imgDisplay');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const resultBox = document.getElementById('resultBox');
+        const promptContent = document.getElementById('promptContent');
+        const copyBtn = document.getElementById('copyBtn');
+        const copySuccess = document.getElementById('copySuccess');
+
+        let imageData = "";
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imageData = event.target.result.split(',')[1];
+                    imgDisplay.src = event.target.result;
+                    emptyState.classList.add('hidden');
+                    previewState.classList.remove('hidden');
+                    actionBtn.disabled = false;
+                    resultBox.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
             }
-            if (app.playStoreUrl) { const p = document.getElementById('playstore-btn'); p.href = app.playStoreUrl; p.classList.remove('hidden'); }
-            setTimeout(() => {
-                const d = document.getElementById('app-description'), o = document.getElementById('read-more-overlay'), s = document.getElementById('sidebar-column');
-                if (d && o && s) { const h = s.offsetHeight, target = Math.min(Math.max(h - 120, 450), 1200); if (d.scrollHeight > target + 40) { d.style.maxHeight = target + 'px'; d.classList.add('overflow-hidden'); o.classList.remove('hidden'); } else { d.style.maxHeight = 'none'; o.classList.add('hidden'); } }
-            }, 1200);
-        }
-        window.toggleDescription = () => { const d = document.getElementById('app-description'), o = document.getElementById('read-more-overlay'); d.style.maxHeight = 'none'; d.classList.remove('overflow-hidden'); o.classList.add('hidden'); };
-        document.getElementById('download-btn').onclick = async () => {
-            if (currentApp.isComingSoon) {
-                showPopup("COMING SOON", "Aplikasi sedang dalam proses, kembali lagi nanti setelah proses upload selesai.", "warning");
-                return;
-            }
-            if (isDownloading) return;
-
-            const role = (state.role || 'guest').toLowerCase();
-
-            if (state.user && role !== 'admin') {
-                if (!userAppRating) {
-                    showAlert("Wajib Rating Sebelum Download!", "warning");
-                    document.getElementById('rating-stars').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    return;
-                }
-            }
-
-            const executeDownload = async () => {
-                let isApproved = true;
-                if (role === 'vip') {
-                    let waStatus = state.userData?.whatsappStatus || 'none';
-
-                    // FORCE SYNC: Jika status tidak approved, coba tarik data terbaru dari server
-                    // Ini penting agar user yang baru disetujui Admin bisa langsung download VIP
-                    if (waStatus !== 'approved') {
-                        try {
-                            const snap = await get(ref(rtdb, `users/${state.user.uid}/whatsappStatus`));
-                            if (snap.exists() && snap.val() === 'approved') {
-                                waStatus = 'approved';
-                                if (state.userData) state.userData.whatsappStatus = 'approved';
-                            }
-                        } catch (e) { console.warn("Sync WA Status failed:", e); }
-                    }
-
-                    if (waStatus !== 'approved') {
-                        isApproved = false;
-                        // Tampilkan notifikasi kecil bahwa mereka dialihkan ke download biasa
-                        showPopup('INFO', 'Akses VIP belum divalidasi. Mengalihkan ke Download Biasa...', 'info');
-                    }
-                }
-
-                const m = document.getElementById('download-msg'), r = state.role || 'guest';
-
-                // Jika aplikasi VIP dan user bukan VIP/Admin, redirect ke pembayaran (Lynk.id) setelah 3 detik
-                if (currentApp.isVip && !['vip', 'admin'].includes(r.toLowerCase())) {
-                    const btn = document.getElementById('download-btn');
-                    let countdown = 3;
-                    isDownloading = true;
-                    btn.classList.add('opacity-80', 'cursor-not-allowed');
-                    
-                    const timer = setInterval(() => {
-                        btn.innerHTML = `<span class="material-icons-outlined animate-spin">stars</span><span>Redirecting (${countdown}s)</span>`;
-                        if (countdown <= 0) {
-                            clearInterval(timer);
-                            window.location.href = 'https://lynk.id/berryv4/zjwzdn5zez9p';
-                        }
-                        countdown--;
-                    }, 1000);
-                    
-                    m.textContent = "Aplikasi Khusus VIP! Anda akan dialihkan ke halaman Aktivasi dalam 3 detik.";
-                    m.className = "text-xs text-yellow-400 mt-3 p-2 rounded border border-yellow-500/20 bg-yellow-500/10 text-center md:text-left";
-                    m.classList.remove('hidden');
-                    return;
-                }
-
-                // Combine Current Version + Archive
-                try {
-                    const vSnap = await get(ref(rtdb, `appVersions/${appId}`));
-                    let versions = [];
-
-                    // Add Current Version (from main app node) as the first item
-                    versions.push({
-                        id: 'current',
-                        versionName: currentApp.version || 'Latest Version',
-                        size: currentApp.size || '0 MB',
-                        downloadUrl: currentApp.downloadUrl,
-                        adsUrl: currentApp.adsUrl,
-                        releaseDate: currentApp.releaseTime || Date.now(),
-                        isLatest: true
-                    });
-
-                    if (vSnap.exists()) {
-                        vSnap.forEach(c => {
-                            const v = c.val();
-                            v.id = c.key;
-                            v.isLatest = false;
-                            versions.push(v);
-                        });
-                        // Sort archive versions by date (current is already at index 0)
-                        const archive = versions.slice(1).sort((a, b) => new Date(b.releaseDate || 0) - new Date(a.releaseDate || 0));
-                        versions = [versions[0], ...archive];
-                    }
-
-                    if (versions.length > 1 || (versions.length === 1 && vSnap.exists())) {
-                        const vList = document.getElementById('versions-list-container');
-                        vList.innerHTML = '';
-                        versions.forEach((v, index) => {
-                            if (index === 1) {
-                                const sep = document.createElement('div');
-                                sep.className = "flex items-center gap-4 my-4 px-2";
-                                sep.innerHTML = `
-                                    <div class="h-px bg-white/20 flex-1"></div>
-                                    <span class="text-[10px] font-black text-white/60 uppercase tracking-[0.3em] whitespace-nowrap">Old Version</span>
-                                    <div class="h-px bg-white/20 flex-1"></div>
-                                `;
-                                vList.appendChild(sep);
-                            }
-                            const btn = document.createElement('button');
-                            // Increased contrast: bg-white/[0.08], border-white/10
-                            btn.className = "group flex items-center justify-between p-5 bg-white/[0.08] border border-white/10 rounded-3xl hover:bg-blue-600 hover:border-blue-400 transition-all duration-300 text-left w-full relative overflow-hidden shadow-xl mb-1";
-
-                            const link = isApproved ? (r === 'guest' ? v.adsUrl || v.downloadUrl : v.downloadUrl) : (v.adsUrl || null);
-
-                            const dateObj = new Date(v.releaseDate);
-                            const timeAgo = (date) => {
-                                const seconds = Math.floor((new Date() - date) / 1000);
-                                if (seconds < 3600) return Math.floor(seconds / 60 || 0) + 'm ago';
-                                if (seconds < 86400) return Math.floor(seconds / 3600 || 0) + 'h ago';
-                                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                            };
-
-                            // Use size from version object
-                            const displaySize = v.size || 'Unknown';
-
-                            // Icon priority: version icon -> main app icon
-                            const displayIcon = v.iconUrl || currentApp.iconUrl;
-
-                            btn.innerHTML = `
-                                <div class="flex items-center gap-4 relative z-10 flex-1 min-w-0">
-                                    <div class="w-14 h-14 rounded-2xl bg-white/10 overflow-hidden flex items-center justify-center border border-white/10 group-hover:border-white/30 transition-all shadow-lg flex-shrink-0">
-                                        <img src="${displayIcon}" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="flex flex-col min-w-0">
-                                        <div class="flex items-center gap-2 mb-1">
-                                            <span class="font-black text-white text-xl tracking-tight group-hover:scale-105 transition-transform leading-tight truncate">${v.versionName}</span>
-                                            ${v.isLatest ? '<span class="px-2.5 py-1 rounded-full bg-blue-500 text-white text-[9px] font-black uppercase tracking-wider shadow-lg shadow-blue-500/20 flex-shrink-0">LATEST</span>' : '<span class="px-2.5 py-1 rounded-full bg-white/10 text-white/80 text-[9px] font-black uppercase tracking-wider border border-white/10 flex-shrink-0">ARCHIVE</span>'}
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-bold uppercase tracking-wide">
-                                            <span class="text-white/80 group-hover:text-white transition-colors flex items-center gap-1.5">
-                                                <span class="material-icons-outlined text-[14px] text-blue-400">sd_storage</span> ${displaySize}
-                                            </span>
-                                            <span class="text-white/20 hidden sm:block">•</span>
-                                            <span class="text-white/60 group-hover:text-white/90 transition-colors flex items-center gap-1.5">
-                                                <span class="material-icons-outlined text-[14px] text-purple-400">calendar_today</span> ${timeAgo(dateObj)}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all relative z-10 shadow-lg flex-shrink-0 ml-2">
-                                    <span class="material-icons-outlined text-white/60 group-hover:text-blue-600 text-base">arrow_forward</span>
-                                </div>
-                                <!-- Hover Glow -->
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            `;
-                            btn.onclick = () => {
-                                if (!link) {
-                                    m.textContent = "Download VIP tertunda (Belum Validasi) & Link Biasa tidak tersedia.";
-                                    m.classList.remove('hidden');
-                                } else {
-                                    if (link.includes(window.location.origin) || !link.startsWith('http')) {
-                                        window.location.href = link;
-                                    } else {
-                                        window.open(link, '_blank');
-                                    }
-                                    // Record download in user history for Event missions
-                                    if (state.user) {
-                                        try {
-                                            update(ref(rtdb, `users/${state.user.uid}/downloadHistory/${appId}`), {
-                                                timestamp: serverTimestamp(),
-                                                appName: currentApp.appName,
-                                                version: v.versionName
-                                            });
-                                        } catch (e) { console.warn("Failed to record download:", e); }
-                                    }
-                                }
-                                closeVersionsModal();
-                            };
-                            vList.appendChild(btn);
-                        });
-
-                        const vModal = document.getElementById('versions-modal');
-                        const vContent = document.getElementById('versions-modal-content');
-                        vModal.classList.remove('hidden');
-                        vModal.classList.add('flex');
-                        setTimeout(() => {
-                            vModal.classList.add('opacity-100');
-                            vContent.classList.remove('translate-y-full', 'sm:translate-y-10');
-                            vContent.classList.add('translate-y-0');
-                        }, 10);
-                        document.body.style.overflow = 'hidden';
-                        return; // Stop default flow
-                    }
-                } catch (e) { console.error("Error fetching versions", e); }
-
-                // LOGIKA PENGALIHAN (FALLBACK)
-                if (!isApproved) {
-                    // Jika belum disetujui, paksa gunakan adsUrl (Download Biasa)
-                    if (currentApp.adsUrl) {
-                        window.open(currentApp.adsUrl, '_blank');
-                        recordDownload();
-                    } else {
-                        m.textContent = "Download VIP tertunda (Belum Validasi) & Link Biasa tidak tersedia.";
-                        m.classList.remove('hidden');
-                    }
-                } else {
-                    // Jika sudah disetujui (atau user guest/admin), jalankan flow normal
-                    if (r === 'guest' && currentApp.adsUrl) {
-                        window.open(currentApp.adsUrl, '_blank');
-                        recordDownload();
-                    } else if (currentApp.downloadUrl) {
-                        window.location.href = currentApp.downloadUrl;
-                        recordDownload();
-                    } else {
-                        m.textContent = "Link download tidak ditemukan.";
-                        m.classList.remove('hidden');
-                    }
-                }
-
-                function recordDownload() {
-                    if (state.user) {
-                        try {
-                            update(ref(rtdb, `users/${state.user.uid}/downloadHistory/${appId}`), {
-                                timestamp: serverTimestamp(),
-                                appName: currentApp.appName,
-                                version: currentApp.version
-                            });
-                        } catch (e) { console.warn("Failed to record download:", e); }
-                    }
-                }
-            };
-
-            if (state.user && role !== 'admin' && userAppRating < 4) {
-                const waitTime = userAppRating === 3 ? 10 : (userAppRating === 2 ? 20 : 330);
-                let timeLeft = waitTime;
-                isDownloading = true;
-                const btn = document.getElementById('download-btn');
-                const originalHtml = btn.innerHTML;
-
-                btn.innerHTML = `<span class="material-icons-outlined animate-spin">hourglass_empty</span><span>Tunggu ${timeLeft}s</span>`;
-                btn.classList.add('cursor-not-allowed', 'opacity-80');
-
-                const timer = setInterval(() => {
-                    timeLeft--;
-                    if (timeLeft <= 0) {
-                        clearInterval(timer);
-                        btn.innerHTML = originalHtml;
-                        btn.classList.remove('cursor-not-allowed', 'opacity-80');
-                        isDownloading = false;
-                        executeDownload();
-                    } else {
-                        btn.innerHTML = `<span class="material-icons-outlined animate-spin">hourglass_empty</span><span>Tunggu ${timeLeft}s</span>`;
-                    }
-                }, 1000);
-            } else {
-                executeDownload();
-            }
-        };
-        document.querySelectorAll('#rating-stars button').forEach(btn => btn.onclick = () => {
-            if (!state.user) {
-                showAlert("Login untuk memberi rating.", "warning");
-                return;
-            }
-            if (userAppRating) {
-                showAlert("Sudah memberi rating!", "error");
-                return;
-            }
-
-            let clickCount = parseInt(localStorage.getItem(`rating_clicks_${appId}`) || '0');
-            clickCount++;
-            localStorage.setItem(`rating_clicks_${appId}`, clickCount.toString());
-
-            if (clickCount > 3) {
-                showAlert("Sistem gagal memverifikasi sesi. Silahkan logout dan login ulang.", "error");
-                return;
-            }
-
-            submitRating(parseInt(btn.dataset.val));
         });
 
-        async function submitRating(r) {
-            if (state.role === 'admin') { showAlert("Admin can't rate.", "error"); return; }
-            try {
-                const refR = ref(rtdb, `apps/${appId}/ratings/${state.user.uid}`);
-                if ((await get(refR)).exists()) {
-                    showAlert("Already rated!", "error");
-                    userAppRating = r;
-                    return;
-                }
-                await set(refR, { 
-                    rating: r, 
-                    timestamp: Date.now(), 
-                    displayName: state.user.displayName || 'Anonymous', 
-                    email: state.user.email || 'N/A',
-                    photoURL: state.user.photoURL || '', 
-                    role: state.role || 'guest' 
-                });
-                userAppRating = r;
-                localStorage.removeItem(`rating_clicks_${appId}`);
+        async function processImage() {
+            if (!imageData) return;
 
-                const snap = await get(ref(rtdb, `apps/${appId}/ratings`)); let s = 0, c = 0; if (snap.exists()) snap.forEach(ch => { s += ch.val().rating; c++; });
-                const a = c ? s / c : 0; await update(ref(rtdb, `apps/${appId}`), { ratingAvg: a, ratingCount: c });
-                document.getElementById('star-display').textContent = a.toFixed(1); document.getElementById('rating-count').textContent = c; updateStarUI(r);
-                showAlert(`Rated ${r} stars!`, "success"); document.getElementById('user-rating-msg').textContent = `Rated ${r} stars!`; document.getElementById('user-rating-msg').className = "text-center text-xs mt-2 text-green-400 font-bold";
-            } catch (e) {
-                console.error(e);
-                let fails = parseInt(localStorage.getItem(`rating_clicks_${appId}`) || '0');
-                if (fails >= 3) {
-                    showAlert("Gagal menyimpan rating. Silahkan logout dan login ulang.", "error");
-                } else {
-                    showAlert("Gagal menyimpan rating. Coba lagi.", "error");
-                }
-            }
-        }
-        if (document.getElementById('share-btn')) {
-            const btn = document.getElementById('share-btn'), mod = document.getElementById('share-modal'), inp = document.getElementById('share-link-input'), img = document.getElementById('qr-code-img'), load = document.getElementById('qr-loading');
-            btn.onclick = () => { const url = window.location.href; inp.value = url; mod.classList.replace('hidden', 'flex'); document.body.style.overflow = 'hidden'; img.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&margin=10`; img.onload = () => { load.classList.add('hidden'); img.classList.replace('opacity-0', 'opacity-100'); }; };
-            document.getElementById('close-share-modal').onclick = () => { mod.classList.replace('flex', 'hidden'); document.body.style.overflow = ''; };
-            mod.onclick = (e) => { if (e.target === mod) { mod.classList.replace('flex', 'hidden'); document.body.style.overflow = ''; } };
-            document.getElementById('copy-link-btn').onclick = () => { inp.select(); document.execCommand('copy'); showAlert('Copied!', 'success'); };
-            document.getElementById('download-qr-btn').onclick = async () => { try { const r = await fetch(img.src), b = await r.blob(), u = URL.createObjectURL(b), a = document.createElement('a'); a.href = u; a.download = `QR-${currentApp?.appName}.png`; a.click(); URL.revokeObjectURL(u); showAlert('QR Saved!', 'success'); } catch (e) { console.error(e); } };
-            document.getElementById('open-whatsapp-btn').onclick = () => window.open(`https://wa.me/?text=${encodeURIComponent('Cek aplikasi ' + (currentApp?.appName || '') + ' di Berry Mod: ' + window.location.href)}`, '_blank');
-        }
-        if (document.getElementById('how-to-download-btn')) {
-            const btn = document.getElementById('how-to-download-btn'), mod = document.getElementById('tutorial-modal'), vid = document.getElementById('tutorial-video');
-            const closeVideo = () => {
-                mod.classList.replace('flex', 'hidden');
-                document.body.style.overflow = '';
-                if (vid) { vid.pause(); vid.currentTime = 0; }
-            };
-            btn.onclick = () => {
-                mod.classList.replace('hidden', 'flex');
-                document.body.style.overflow = 'hidden';
-                if (vid) setTimeout(() => vid.play().catch(e => console.warn("Autoplay prevented:", e)), 150);
-            };
-            document.getElementById('close-tutorial-modal').onclick = closeVideo;
-            mod.onclick = (e) => { if (e.target === mod) closeVideo(); };
-        }
-        if (document.getElementById('request-update-btn')) {
-            const btn = document.getElementById('request-update-btn');
-            btn.onclick = async () => {
-                if (localStorage.getItem(`requested_${appId}`)) {
-                    showAlert("You already requested an update for this app!", "warning");
-                    return;
-                }
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fa-solid fa-sync fa-spin text-sm"></i> Processing...';
-                btn.disabled = true;
+            actionBtn.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            resultBox.classList.add('hidden');
+
+            const systemInstruction = `Anda adalah Image Prompt Engineer. Tugas Anda adalah menganalisis gambar referensi dan mengekstrak deskripsi visual ke dalam format terstruktur yang ketat.
+            
+            FORMAT WAJIB:
+            Make a Picture Ultrarealistic -
+            SUBJECT: [HANYA tuliskan "a man" atau "a girl" tergantung subjek utama di foto, jangan beri deskripsi tambahan di bagian ini]
+            ANGLE: [Sudut pandang kamera smartphone, misal: eye-level, low angle, top down]
+            OUTFIT: [Deskripsi pakaian, bahan, dan warna]
+            POSE: [Posisi tubuh dan ekspresi wajah]
+            ENVIRONMENT: [Setting lokasi, latar belakang, dan detail sekitarnya]
+            LIGHTING: [Gaya pencahayaan iPhone: natural daylight, smart HDR, soft indoor shadows, warm sunset glow, no cinematic artificial lighting]
+
+            ATURAN:
+            - Gunakan Bahasa Inggris.
+            - Gaya harus realistis 'Shot on iPhone'.
+            - Bagian SUBJECT wajib hanya berisi kata "a man" atau "a girl".
+            - Jangan tambahkan teks pembuka atau penutup. Langsung berikan format di atas.`;
+
+            const prompt = "Analyze this image and convert it into the requested structured prompt format. Remember the SUBJECT must strictly be just 'a man' or 'a girl'.";
+
+            let retries = 0;
+            const maxRetries = 5;
+
+            async function callApi() {
                 try {
-                    await runTransaction(ref(rtdb, `apps/${appId}/updateRequests`), (v) => (v || 0) + 1);
-                    localStorage.setItem(`requested_${appId}`, 'true');
-                    showAlert("Request update sent!", "success");
-                    btn.innerHTML = '<i class="fa-solid fa-circle-check text-xs sm:text-sm text-yellow-500"></i> <span class="text-[11px] sm:text-sm">Requested</span>';
-                } catch (e) {
-                    console.error(e);
-                    showAlert("Failed to send request.", "error");
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [
+                                    { text: prompt },
+                                    { inlineData: { mimeType: "image/png", data: imageData } }
+                                ]
+                            }],
+                            systemInstruction: { parts: [{ text: systemInstruction }] }
+                        })
+                    });
+
+                    const data = await response.json();
+                    if (!response.ok) throw new Error("API Error");
+                    
+                    const resultText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Gagal menghasilkan prompt.";
+
+                    promptContent.textContent = resultText.trim();
+                    loadingIndicator.classList.add('hidden');
+                    actionBtn.classList.remove('hidden');
+                    resultBox.classList.remove('hidden');
+
+                } catch (error) {
+                    if (retries < maxRetries) {
+                        const delay = Math.pow(2, retries) * 1000;
+                        retries++;
+                        setTimeout(callApi, delay);
+                    } else {
+                        loadingIndicator.classList.add('hidden');
+                        actionBtn.classList.remove('hidden');
+                        alert("Gagal menghubungi AI. Coba lagi.");
+                    }
                 }
-            };
-            if (localStorage.getItem(`requested_${appId}`)) {
-                btn.innerHTML = '<i class="fa-solid fa-circle-check text-xs sm:text-sm text-yellow-500"></i> <span class="text-[11px] sm:text-sm">Requested</span>';
             }
+
+            callApi();
         }
 
-        // Modal Handling for Versions
-        const vModal = document.getElementById('versions-modal');
-        const vContent = document.getElementById('versions-modal-content');
-        function closeVersionsModal() {
-            if (vModal) {
-                vModal.classList.remove('opacity-100');
-                if (vContent) vContent.classList.add('translate-y-full');
-                setTimeout(() => {
-                    vModal.classList.replace('flex', 'hidden');
-                    if (vContent) vContent.classList.remove('translate-y-full');
-                }, 300);
-            }
-            document.body.style.overflow = '';
-        }
-        if (document.getElementById('close-versions-modal')) {
-            document.getElementById('close-versions-modal').onclick = closeVersionsModal;
-        }
-        if (vModal) {
-            vModal.onclick = (e) => { if (e.target === vModal) closeVersionsModal(); };
-        }
+        actionBtn.addEventListener('click', processImage);
 
+        copyBtn.addEventListener('click', () => {
+            const text = promptContent.textContent;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            copySuccess.classList.remove('hidden');
+            setTimeout(() => copySuccess.classList.add('hidden'), 3000);
+        });
     </script>
 </body>
-
 </html>
