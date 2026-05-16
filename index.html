@@ -1,10 +1,10 @@
-```html
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HRZX PROMPT - Cyber Aesthetic</title>
+    <title>HRZX PROMPT - OpenRouter Free Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/font-awesome.min.css">
     <style>
@@ -13,9 +13,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #02040a;
-            background-image: 
-                radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 50%),
-                radial-gradient(circle at 0% 100%, #0f172a 0%, transparent 50%);
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 50%);
             color: #f8fafc;
             min-height: 100vh;
             margin: 0;
@@ -37,12 +35,6 @@
             background: linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%);
             color: #ffffff;
             transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .cyber-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
         }
 
         .loader {
@@ -54,16 +46,11 @@
             animation: spin 0.8s linear infinite;
         }
 
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
         .prompt-box {
             background: rgba(2, 6, 23, 0.8);
             border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        .cyber-accent {
-            color: #38bdf8;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
         }
     </style>
 </head>
@@ -71,57 +58,50 @@
 
     <div class="max-w-2xl w-full p-4 space-y-8">
         <div class="text-center space-y-2">
-            <h1 class="header-font text-2xl md:text-4xl font-bold tracking-[0.3em] cyber-accent">HRZX PROMPT</h1>
-            <p class="text-slate-400 text-[10px] uppercase tracking-[0.5em]">iPhone Realistic Prompt Engine</p>
+            <h1 class="header-font text-2xl md:text-3xl font-bold tracking-[0.3em] text-sky-400">HRZX PROMPT</h1>
+            <p id="modelStatus" class="text-slate-400 text-[9px] uppercase tracking-[0.4em]">Model: OpenRouter/Free</p>
         </div>
 
-        <div class="glass-card rounded-[2rem] p-6 md:p-10 space-y-8 relative overflow-hidden">
-            <!-- Upload Area -->
-            <div onclick="document.getElementById('fileInput').click()" class="relative border border-slate-800 rounded-2xl p-8 text-center cursor-pointer hover:border-blue-500/50 transition-all">
+        <div class="glass-card rounded-[2.5rem] p-8 md:p-10 space-y-8">
+            <div onclick="document.getElementById('fileInput').click()" class="relative border-2 border-dashed border-slate-800 rounded-2xl p-8 text-center cursor-pointer hover:border-sky-500/50 bg-slate-900/20">
                 <input type="file" id="fileInput" class="hidden" accept="image/*">
                 
-                <div id="emptyState" class="space-y-4">
-                    <div class="w-16 h-16 bg-slate-900/50 rounded-full flex items-center justify-center mx-auto border border-blue-500/20">
-                        <i class="fa-solid fa-cloud-arrow-up text-blue-400 text-xl"></i>
-                    </div>
-                    <p class="text-sm text-slate-200 font-bold uppercase tracking-widest">Klik Untuk Upload Gambar</p>
+                <div id="emptyState">
+                    <i class="fa-solid fa-bolt text-yellow-400/50 text-3xl mb-4"></i>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Muat Naik Gambar</p>
                 </div>
 
                 <div id="previewState" class="hidden">
-                    <img id="imgDisplay" src="#" alt="Preview" class="mx-auto rounded-xl max-h-56 shadow-2xl border border-blue-500/30">
-                    <p class="mt-4 text-[10px] text-blue-400 font-bold uppercase tracking-wider">Tukar Gambar</p>
+                    <img id="imgDisplay" src="#" class="mx-auto rounded-xl max-h-56 shadow-2xl border border-sky-500/30">
+                    <p class="mt-4 text-[9px] text-sky-400 font-bold uppercase">Klik Untuk Tukar</p>
                 </div>
             </div>
 
-            <button id="actionBtn" disabled class="cyber-btn w-full py-5 rounded-2xl font-black text-xs tracking-[0.3em] uppercase disabled:opacity-20">
-                Generate Structured Prompt
+            <button id="actionBtn" disabled class="cyber-btn w-full py-5 rounded-2xl font-black text-[10px] tracking-[0.3em] uppercase disabled:opacity-20">
+                PROSES DENGAN OPENROUTER/FREE
             </button>
 
-            <!-- Loading -->
             <div id="loadingIndicator" class="hidden flex flex-col items-center justify-center gap-4 py-6">
                 <div class="loader"></div>
-                <span class="text-[10px] font-black tracking-[0.3em] text-blue-400 uppercase">Menganalisis Gambar...</span>
+                <span id="loadingText" class="text-[9px] font-black tracking-[0.3em] text-sky-400 uppercase">Menghubungi OpenRouter Free...</span>
             </div>
 
-            <!-- Result -->
             <div id="resultBox" class="hidden space-y-6">
-                <div class="flex items-center justify-between border-b border-blue-500/20 pb-4">
-                    <span class="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em]">Hasil Prompt</span>
-                    <button id="copyBtn" class="bg-blue-500/10 text-blue-400 px-4 py-2 rounded-lg border border-blue-500/30 text-[10px] font-black uppercase hover:bg-blue-500/20">Copy Prompt</button>
+                <div class="flex items-center justify-between border-b border-sky-500/20 pb-4">
+                    <span class="text-[9px] font-black text-sky-400 uppercase tracking-[0.3em]">Prompt Result</span>
+                    <button id="copyBtn" class="bg-sky-500/10 text-sky-400 px-4 py-2 rounded-lg border border-sky-500/30 text-[9px] font-black uppercase hover:bg-sky-500/20">Salin</button>
                 </div>
-                <div id="promptContent" class="prompt-box p-6 rounded-2xl text-xs md:text-sm font-mono text-blue-100 leading-relaxed whitespace-pre-wrap"></div>
-                <div id="copySuccess" class="hidden text-center text-[10px] font-bold text-cyan-400 uppercase tracking-widest">Berhasil Disalin!</div>
+                <div id="promptContent" class="prompt-box p-6 rounded-2xl text-xs md:text-sm text-slate-200 leading-relaxed whitespace-pre-wrap"></div>
+                <div id="copySuccess" class="hidden text-center text-[9px] font-bold text-emerald-400 uppercase tracking-[0.3em]">Berjaya Disalin!</div>
             </div>
         </div>
     </div>
 
     <script>
-        /* CARA AKTIFKAN:
-           1. Pergi ke https://aistudio.google.com/
-           2. Dapatkan API Key
-           3. Tampal kod tersebut di dalam tanda "" di bawah ini.
-        */
-        const apiKey = "AIzaSyC0NvfLUYSA2JU6r6Oh3c958ANYzafmlHY"; 
+        const apiKey = "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"; // Ganti dengan key anda
+        
+        // Menggunakan ID model spesifik yang diminta
+        const mainModel = "openrouter/free";
 
         const fileInput = document.getElementById('fileInput');
         const actionBtn = document.getElementById('actionBtn');
@@ -129,20 +109,21 @@
         const previewState = document.getElementById('previewState');
         const imgDisplay = document.getElementById('imgDisplay');
         const loadingIndicator = document.getElementById('loadingIndicator');
+        const loadingText = document.getElementById('loadingText');
         const resultBox = document.getElementById('resultBox');
         const promptContent = document.getElementById('promptContent');
         const copyBtn = document.getElementById('copyBtn');
         const copySuccess = document.getElementById('copySuccess');
 
-        let imageData = "";
+        let base64Image = "";
 
-        fileInput.addEventListener('change', (e) => {
+        fileInput.onchange = (e) => {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = (event) => {
-                    imageData = event.target.result.split(',')[1];
-                    imgDisplay.src = event.target.result;
+                reader.onload = (ev) => {
+                    base64Image = ev.target.result;
+                    imgDisplay.src = ev.target.result;
                     emptyState.classList.add('hidden');
                     previewState.classList.remove('hidden');
                     actionBtn.disabled = false;
@@ -150,11 +131,11 @@
                 };
                 reader.readAsDataURL(file);
             }
-        });
+        };
 
-        async function processImage() {
-            if (!apiKey || apiKey === "") {
-                alert("Sila masukkan API Key dalam kod baris 112!");
+        async function generatePrompt() {
+            if (!apiKey || apiKey.includes("MASUKKAN")) {
+                alert("Sila masukkan API Key OpenRouter!");
                 return;
             }
 
@@ -162,67 +143,58 @@
             loadingIndicator.classList.remove('hidden');
             resultBox.classList.add('hidden');
 
-            const systemInstruction = `Anda adalah Image Prompt Engineer. Tugas Anda adalah menganalisis gambar referensi dan mengekstrak deskripsi visual ke dalam format terstruktur yang ketat.
-            
-            FORMAT WAJIB:
-            Make a Picture Ultrarealistic -
-            SUBJECT: [HANYA tuliskan "a man" atau "a girl" tergantung subjek utama di foto, jangan beri deskripsi tambahan di bagian ini]
-            ANGLE: [Sudut pandang kamera smartphone, misal: eye-level, low angle, top down]
-            OUTFIT: [Deskripsi pakaian, bahan, dan warna]
-            POSE: [Posisi tubuh dan ekspresi wajah]
-            ENVIRONMENT: [Setting lokasi, latar belakang, dan detail sekitarnya]
-            LIGHTING: [Gaya pencahayaan iPhone: natural daylight, smart HDR, soft indoor shadows, warm sunset glow, no cinematic artificial lighting]
-
-            ATURAN:
-            - Gunakan Bahasa Inggris.
-            - Gaya harus realistis 'Shot on iPhone'.
-            - Bagian SUBJECT wajib hanya berisi kata "a man" atau "a girl".
-            - Jangan tambahkan teks pembuka atau penutup. Langsung berikan format di atas.`;
-
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${apiKey.trim()}`,
+                        "Content-Type": "application/json",
+                        "HTTP-Referer": window.location.href,
+                        "X-Title": "HRZX Prompt Engine"
+                    },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [
-                                { text: "Analyze this image and provide the prompt." },
-                                { inlineData: { mimeType: "image/png", data: imageData } }
+                        model: mainModel,
+                        messages: [{
+                            role: "user",
+                            content: [
+                                { type: "text", text: "Analyze the image and strictly generate this format: Make a Picture Ultrarealistic - SUBJECT: [a man/a girl only], ANGLE: [Smartphone angle], OUTFIT: [Detailed outfit], POSE: [Body position], ENVIRONMENT: [Location], LIGHTING: [iPhone lighting]. Important: Use English only. No conversational text." },
+                                { type: "image_url", image_url: { url: base64Image } }
                             ]
-                        }],
-                        systemInstruction: { parts: [{ text: systemInstruction }] }
+                        }]
                     })
                 });
 
                 const data = await response.json();
-                if (data.error) throw new Error(data.error.message);
 
-                const resultText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Gagal menjana.";
-                promptContent.textContent = resultText.trim();
+                if (data.error) {
+                    throw new Error(data.error.message || "Ralat pada model openrouter/free");
+                }
+
+                let result = data.choices[0].message.content;
+                
+                // Pembersihan jika model mengeluarkan reasoning <think>
+                result = result.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+
+                promptContent.textContent = result;
                 loadingIndicator.classList.add('hidden');
-                actionBtn.classList.remove('hidden');
                 resultBox.classList.remove('hidden');
+                actionBtn.classList.remove('hidden');
 
-            } catch (error) {
-                alert("Error: " + error.message);
+            } catch (err) {
+                alert("Ralat: " + err.message);
                 loadingIndicator.classList.add('hidden');
                 actionBtn.classList.remove('hidden');
             }
         }
 
-        actionBtn.addEventListener('click', processImage);
-        copyBtn.addEventListener('click', () => {
-            const el = document.createElement('textarea');
-            el.value = promptContent.textContent;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
+        actionBtn.onclick = generatePrompt;
+
+        copyBtn.onclick = () => {
+            navigator.clipboard.writeText(promptContent.textContent);
             copySuccess.classList.remove('hidden');
             setTimeout(() => copySuccess.classList.add('hidden'), 2000);
-        });
+        };
     </script>
 </body>
 </html>
 
-```
