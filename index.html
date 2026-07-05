@@ -1,10 +1,10 @@
-html
+
 <!DOCTYPE html>
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrystalVault - Cloud iOS 26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CrystalVault - Cloud iOS 26 Vercel Ready</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,9 +20,6 @@ html
                             600: '#0062cc',
                             900: '#031b33',
                         }
-                    },
-                    backdropBlur: {
-                        xs: '2px',
                     }
                 }
             }
@@ -30,7 +27,7 @@ html
     </script>
     <!-- Google Fonts for iOS-like Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Firebase Compat SDKs -->
+    <!-- Firebase SDK (Compatibility Version untuk kelancaran pelayan Vercel) -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
@@ -38,6 +35,7 @@ html
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: radial-gradient(circle at 50% 0%, #0d2a4a 0%, #030e1e 70%, #01050d 100%);
+            -webkit-tap-highlight-color: transparent;
         }
         /* Custom scrollbar to match glassmorphism style */
         ::-webkit-scrollbar {
@@ -111,7 +109,7 @@ html
                 </div>
                 <div>
                     <h1 class="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent">CrystalVault</h1>
-                    <p class="text-xs text-cyan-300 font-medium">iOS 26 Cloud Edition</p>
+                    <p class="text-xs text-cyan-300 font-medium">iOS 26 Cloud Vercel Edition</p>
                 </div>
             </div>
 
@@ -121,7 +119,7 @@ html
                     <span id="cloud-pulse" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span id="cloud-indicator" class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </div>
-                <span id="cloud-status-text" class="text-slate-300 font-medium">Menyambung ke Awan...</span>
+                <span id="cloud-status-text" class="text-slate-300 font-medium">Menyambung ke Awan Vercel...</span>
                 <span id="user-display" class="hidden sm:inline text-[10px] text-slate-400 border-l border-white/10 pl-3"></span>
             </div>
         </div>
@@ -200,7 +198,7 @@ html
                 <button onclick="filterMedia('video')" id="filter-video" class="flex-1 py-1.5 rounded-xl text-xs font-semibold text-center transition-all text-slate-400 hover:text-white">Video</button>
             </div>
 
-            <!-- Media Grid Grid -->
+            <!-- Media Grid -->
             <div id="media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 <!-- Loading state -->
                 <div class="col-span-full py-12 flex flex-col items-center justify-center gap-3">
@@ -208,7 +206,7 @@ html
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span class="text-xs text-slate-400">Menyegerakkan storan awam...</span>
+                    <span class="text-xs text-slate-400">Menyegerakkan storan awan...</span>
                 </div>
             </div>
         </section>
@@ -267,7 +265,7 @@ html
 
                     <!-- File Picker Option -->
                     <div id="file-picker-container" class="relative group border-2 border-dashed border-white/15 hover:border-cyan-500/50 rounded-2xl p-4 text-center cursor-pointer transition-all">
-                        <input type="file" id="media-file" class="hidden" accept="image/*,video/*">
+                        <input type="file" id="media-file" class="hidden" accept="image/*">
                         <div id="file-picker-placeholder" onclick="document.getElementById('media-file').click()" class="space-y-1">
                             <svg class="w-8 h-8 text-slate-400 group-hover:text-cyan-400 mx-auto transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
@@ -277,8 +275,8 @@ html
                         </div>
                         <!-- Preview Box -->
                         <div id="file-preview-container" class="hidden relative h-32 rounded-xl overflow-hidden mt-1">
-                            <img id="file-preview-img" src="" class="w-full h-full object-cover hidden">
-                            <video id="file-preview-vid" src="" class="w-full h-full object-cover hidden" muted playsinline></video>
+                            <img id="file-preview-img" src="" class="w-full h-full object-cover hidden" alt="Pratonton Media">
+                            <video id="file-preview-vid" src="" class="w-full h-full object-cover hidden" playbook-inline muted playsinline></video>
                             <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
                                 <span class="text-xs text-white bg-black/60 px-2.5 py-1 rounded-full cursor-pointer" onclick="resetFilePicker()">Batal & Tukar Fail</span>
                             </div>
@@ -303,7 +301,7 @@ html
         </div>
     </div>
 
-    <!-- Notification system / custom message modal instead of default alert -->
+    <!-- Toast Notification -->
     <div id="notification-toast" class="fixed bottom-6 right-6 z-50 max-w-sm w-full crystal-glass p-4 rounded-2xl transform translate-y-24 opacity-0 transition-all duration-300 shadow-2xl flex items-start gap-3 border-l-4 border-cyan-500">
         <div class="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 text-cyan-400" id="toast-icon">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -342,12 +340,12 @@ html
 
     <!-- Footer -->
     <footer class="w-full py-6 text-center text-xs text-slate-500 border-t border-white/5 z-10">
-        <p>© 2026 CrystalVault - Cloud iOS 26. Semua data disimpan secara real-time di awan.</p>
+        <p>© 2026 CrystalVault - Dioptimumkan khas untuk Vercel Serverless Hosting.</p>
     </footer>
 
     <script>
         // ==========================================
-        // Firebase Cloud Initialization (RULE 1, 2, 3)
+        // Firebase Cloud Initialization (Vercel Optimized)
         // ==========================================
         const firebaseConfig = JSON.parse(__firebase_config);
         const app = firebase.initializeApp(firebaseConfig);
@@ -359,12 +357,12 @@ html
         let user = null;
         let albums = [];
         let mediaItems = [];
-        let activeAlbumId = 'all'; // 'all' means display all media
-        let currentFilter = 'all'; // 'all', 'image', 'video'
-        let currentMediaType = 'image'; // State for modal: 'image' or 'video'
-        let currentInputMethod = 'file'; // State for modal: 'file' or 'url'
-        let base64MediaString = ''; // Holds local media file
-        let deleteTargetId = null; // Tracks which file to delete
+        let activeAlbumId = 'all'; 
+        let currentFilter = 'all'; 
+        let currentMediaType = 'image'; 
+        let currentInputMethod = 'file'; 
+        let base64MediaString = ''; 
+        let deleteTargetId = null; 
 
         // DOM elements
         const cloudIndicator = document.getElementById('cloud-indicator');
@@ -392,12 +390,10 @@ html
         const filePickerPlaceholder = document.getElementById('file-picker-placeholder');
         const sizeWarning = document.getElementById('size-warning');
 
-        // ==========================================
-        // RULE 3 - Authentication Before Queries
-        // ==========================================
+        // Initializing Authentication
         const initAuth = async () => {
             try {
-                updateCloudStatus("Menyambung...", "yellow");
+                updateCloudStatus("Menghubungkan...", "yellow");
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     await auth.signInWithCustomToken(__initial_auth_token);
                 } else {
@@ -405,31 +401,28 @@ html
                 }
             } catch (error) {
                 console.error("Auth error:", error);
-                showToast("Ralat Awan", "Gagal menghubungi pelayan pengesahan. Sila cuba lagi.", "error");
-                updateCloudStatus("Ralat Sambungan", "red");
+                showToast("Gagal Disambung", "Terdapat gangguan rangkaian. Sila cuba lagi.", "error");
+                updateCloudStatus("Sambungan Terputus", "red");
             }
         };
 
-        // Track Auth state
+        // Auth state listener
         auth.onAuthStateChanged((currentUserState) => {
             user = currentUserState;
             if (user) {
                 userDisplay.textContent = `ID: ${user.uid.substring(0, 10)}...`;
                 userDisplay.classList.remove('hidden');
                 updateCloudStatus("Awan Aktif", "green");
-                
-                // Initialize Listeners now that user is authenticated
                 setupFirestoreListeners();
             } else {
                 userDisplay.classList.add('hidden');
-                updateCloudStatus("Tiada Pengguna", "yellow");
+                updateCloudStatus("Sambungan Ditutup", "yellow");
             }
         });
 
-        // Initialize immediately
+        // Run Auth init immediately
         initAuth();
 
-        // Helper to visual state of cloud
         function updateCloudStatus(text, color) {
             cloudStatusText.textContent = text;
             if (color === "green") {
@@ -440,28 +433,23 @@ html
                 cloudPulse.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75";
             } else {
                 cloudIndicator.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500";
-                cloudPulse.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"; // Stop pulse
+                cloudPulse.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500";
             }
         }
 
         // ==========================================
-        // RULE 1 & 2 - Firestore Setup & Listeners
+        // Safe Firestore Read & Writes
         // ==========================================
         let unsubscribeAlbums = null;
         let unsubscribeMedia = null;
 
         function setupFirestoreListeners() {
-            if (!user) return; // Prevent database operations if not authenticated
+            if (!user) return;
 
-            // Albums reference
-            // Path structure: artifacts/{appId}/users/{userId}/albums
             const albumsCollection = db.collection('artifacts').doc(appId).collection('users').doc(user.uid).collection('albums');
-            
-            // Media reference
-            // Path structure: artifacts/{appId}/users/{userId}/media
             const mediaCollection = db.collection('artifacts').doc(appId).collection('users').doc(user.uid).collection('media');
 
-            // Listening to Albums
+            // Listening for albums in Realtime
             unsubscribeAlbums = albumsCollection.onSnapshot((snapshot) => {
                 albums = [];
                 snapshot.forEach((doc) => {
@@ -470,41 +458,39 @@ html
                 renderAlbums();
                 updateModalAlbumSelect();
             }, (error) => {
-                console.error("Albums listener error:", error);
-                showToast("Ralat Memuatkan Album", "Tidak dapat menyegerakkan album dengan pelayan cloud.", "error");
+                console.error("Albums reading failed:", error);
+                showToast("Awan Terhad", "Tidak dapat menyegerakkan album semasa.", "error");
             });
 
-            // Listening to Media (No compound query / orderby as per RULE 2)
+            // Listening for media in Realtime (Sorted locally to avoid complex index queries)
             unsubscribeMedia = mediaCollection.onSnapshot((snapshot) => {
                 mediaItems = [];
                 snapshot.forEach((doc) => {
                     mediaItems.push({ id: doc.id, ...doc.data() });
                 });
-                // Sort by timestamp in memory since simple queries are preferred to avoid index building failures
                 mediaItems.sort((a, b) => b.createdAt - a.createdAt);
                 renderMedia();
             }, (error) => {
-                console.error("Media listener error:", error);
-                showToast("Ralat Memuatkan Media", "Gagal memuat turun foto & video dari awan.", "error");
+                console.error("Media reading failed:", error);
+                showToast("Awan Terhad", "Gagal menyegerakkan fail media anda.", "error");
             });
         }
 
-        // Cleanup on window close
+        // Clean-up snapshot listeners when tab is destroyed
         window.addEventListener('beforeunload', () => {
             if (unsubscribeAlbums) unsubscribeAlbums();
             if (unsubscribeMedia) unsubscribeMedia();
         });
 
         // ==========================================
-        // UI Rendering Functions
+        // UI Layout Rendering Functions
         // ==========================================
 
-        // Render Albums list in the Sidebar
         function renderAlbums() {
             albumsList.innerHTML = '';
             albumCount.textContent = albums.length;
 
-            // Default Option: All Media
+            // Default Album Option: Semua Media
             const allBtn = document.createElement('button');
             allBtn.className = `flex-shrink-0 lg:w-full flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-semibold transition-all ${
                 activeAlbumId === 'all' ? 'crystal-glass-active text-white' : 'hover:bg-white/5 text-slate-300'
@@ -521,11 +507,10 @@ html
             allBtn.onclick = () => selectAlbum('all');
             albumsList.appendChild(allBtn);
 
-            // Dynamically populated albums
             if (albums.length === 0) {
                 const emptyMsg = document.createElement('div');
                 emptyMsg.className = "text-[11px] text-slate-400 text-center py-4 px-2 hidden lg:block";
-                emptyMsg.textContent = "Sila cipta album baharu anda di atas.";
+                emptyMsg.textContent = "Sila bina nama album baharu di atas.";
                 albumsList.appendChild(emptyMsg);
             } else {
                 albums.forEach(album => {
@@ -556,16 +541,13 @@ html
             }
         }
 
-        // Render Media items in selected Album
         function renderMedia() {
             mediaGrid.innerHTML = '';
             
-            // Filter by active album
             let filteredItems = activeAlbumId === 'all' 
                 ? mediaItems 
                 : mediaItems.filter(item => item.albumId === activeAlbumId);
 
-            // Filter by media type (All / Photo / Video)
             if (currentFilter !== 'all') {
                 filteredItems = filteredItems.filter(item => item.type === currentFilter);
             }
@@ -578,8 +560,8 @@ html
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-sm font-semibold text-slate-200">Tiada item dijumpai</h3>
-                        <p class="text-xs text-slate-400 mt-1 max-w-[240px]">Sila muat naik foto atau video baharu ke dalam album ini.</p>
+                        <h3 class="text-sm font-semibold text-slate-200">Album ini masih kosong</h3>
+                        <p class="text-xs text-slate-400 mt-1 max-w-[240px]">Sila muat naik foto atau pautan video pertama anda ke awan Vercel.</p>
                     </div>
                 `;
                 return;
@@ -589,7 +571,6 @@ html
                 const card = document.createElement('div');
                 card.className = "group relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-xl flex flex-col justify-between transition-all hover:scale-[1.02] duration-300";
                 
-                // Construct the preview section based on media type
                 let mediaElement = '';
                 if (item.type === 'image') {
                     mediaElement = `
@@ -600,7 +581,6 @@ html
                     mediaElement = `
                         <div class="relative w-full h-48 bg-slate-900 flex items-center justify-center overflow-hidden">
                             <video src="${item.url}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" preload="metadata" muted playsinline></video>
-                            <!-- Visual Play Overlay -->
                             <div class="absolute inset-0 bg-black/35 flex items-center justify-center pointer-events-none">
                                 <div class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white">
                                     <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
@@ -612,14 +592,12 @@ html
                     `;
                 }
 
-                // Match with Album Name
                 const matchedAlbum = albums.find(a => a.id === item.albumId);
                 const albumName = matchedAlbum ? matchedAlbum.name : 'Utama';
 
                 card.innerHTML = `
                     <div class="relative overflow-hidden cursor-pointer" onclick="viewLargeMedia('${item.url}', '${item.type}', '${item.title}')">
                         ${mediaElement}
-                        <!-- Hover Info Bar -->
                         <div class="absolute top-2.5 left-2.5 bg-black/55 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] text-cyan-300 font-medium">
                             ${albumName}
                         </div>
@@ -627,9 +605,9 @@ html
                     <div class="p-4 flex items-center justify-between gap-2 border-t border-white/5 bg-slate-950/20">
                         <div class="truncate">
                             <h4 class="text-sm font-semibold text-white truncate" title="${item.title}">${item.title}</h4>
-                            <span class="text-[10px] text-slate-400 font-medium">Dimuat naik pada ${new Date(item.createdAt).toLocaleDateString('ms-MY')}</span>
+                            <span class="text-[10px] text-slate-400 font-medium">Ditambah ${new Date(item.createdAt).toLocaleDateString('ms-MY')}</span>
                         </div>
-                        <button onclick="requestDeleteMedia('${item.id}', event)" class="p-2 rounded-xl bg-white/5 hover:bg-red-500/10 text-slate-400 hover:text-red-400 border border-white/5 hover:border-red-500/20 transition-all" title="Padam daripada cloud">
+                        <button onclick="requestDeleteMedia('${item.id}', event)" class="p-2 rounded-xl bg-white/5 hover:bg-red-500/10 text-slate-400 hover:text-red-400 border border-white/5 hover:border-red-500/20 transition-all" title="Padam daripada Cloud">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                             </svg>
@@ -641,23 +619,21 @@ html
         }
 
         // ==========================================
-        // Event Listeners & UI Operations
+        // Interaction Logic & Controller
         // ==========================================
 
-        // Track Active Album navigation
         function selectAlbum(albumId) {
             activeAlbumId = albumId;
             if (albumId === 'all') {
                 activeAlbumTitle.textContent = 'Semua Media';
             } else {
                 const target = albums.find(a => a.id === albumId);
-                activeAlbumTitle.textContent = target ? target.name : 'Album Tiada Nama';
+                activeAlbumTitle.textContent = target ? target.name : 'Album Hilang';
             }
             renderAlbums();
             renderMedia();
         }
 
-        // Update active media type tabs
         function filterMedia(type) {
             currentFilter = type;
             document.getElementById('filter-all').className = `flex-1 py-1.5 rounded-xl text-xs font-semibold text-center transition-all ${type === 'all' ? 'crystal-glass-active text-white' : 'text-slate-400 hover:text-white'}`;
@@ -666,11 +642,9 @@ html
             renderMedia();
         }
 
-        // Update the drop down inside upload modal
         function updateModalAlbumSelect() {
             modalAlbumSelect.innerHTML = '';
             
-            // Default "Utama" Option
             const mainOpt = document.createElement('option');
             mainOpt.value = 'all';
             mainOpt.textContent = 'Utama (Semua)';
@@ -684,7 +658,7 @@ html
             });
         }
 
-        // Album creation submission
+        // Action: Cipta Album
         albumForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!user) return;
@@ -694,8 +668,6 @@ html
 
             try {
                 updateCloudStatus("Menyimpan...", "yellow");
-                
-                // Add document using strict path (RULE 1)
                 const albumsCollection = db.collection('artifacts').doc(appId).collection('users').doc(user.uid).collection('albums');
                 await albumsCollection.add({
                     name: albumName,
@@ -703,23 +675,23 @@ html
                 });
 
                 albumNameInput.value = '';
-                showToast("Album Cipta", `Album "${albumName}" telah disimpan dengan selamat ke Cloud!`, "success");
+                showToast("Album Dicipta", `"${albumName}" berjaya disimpan ke Cloud Vercel.`, "success");
                 updateCloudStatus("Awan Aktif", "green");
             } catch (error) {
-                console.error("Save album error:", error);
-                showToast("Kegagalan Cloud", "Gagal menyimpan album baharu.", "error");
+                console.error("Save album failed:", error);
+                showToast("Gagal Cipta", "Storan awan tidak memberi tindak balas.", "error");
                 updateCloudStatus("Awan Ralat", "red");
             }
         });
 
-        // Trigger safe deletion of album
+        // Action: Padam Album
         async function deleteAlbum(albumId, event) {
-            event.stopPropagation(); // Avoid selecting the album click event
+            event.stopPropagation();
             if (!user) return;
 
             const matchedMedia = mediaItems.filter(item => item.albumId === albumId);
             if (matchedMedia.length > 0) {
-                showToast("Album Tidak Kosong", "Sila padam atau pindahkan semua foto & video di dalam album ini terlebih dahulu.", "error");
+                showToast("Album Ada Kandungan", "Pindahkan atau padamkan fail media di dalam dahulu.", "error");
                 return;
             }
 
@@ -731,22 +703,20 @@ html
                 if (activeAlbumId === albumId) {
                     selectAlbum('all');
                 }
-                showToast("Album Dipadam", "Album berjaya dikeluarkan secara kekal.", "success");
+                showToast("Album Dibuang", "Album berjaya disingkirkan secara kekal.", "success");
                 updateCloudStatus("Awan Aktif", "green");
             } catch (error) {
-                console.error("Delete album error:", error);
-                showToast("Ralat Awan", "Tidak dapat memadamkan album pada pelayan awan.", "error");
+                console.error("Delete album failed:", error);
+                showToast("Gagal Memadam", "Tidak berjaya mengeluarkan album dari pelayan.", "error");
                 updateCloudStatus("Awan Ralat", "red");
             }
         }
 
         // ==========================================
-        // Modal & Media Creation Flow
+        // File Uploading & Compression Logic
         // ==========================================
 
-        // Modal Open
         openUploadBtn.onclick = () => {
-            // Select current viewing album as prefilled option in select tag
             modalAlbumSelect.value = activeAlbumId === 'all' ? 'all' : activeAlbumId;
             resetFilePicker();
             uploadModal.classList.remove('hidden');
@@ -755,7 +725,6 @@ html
             }, 50);
         };
 
-        // Modal Close
         const closeModal = () => {
             uploadModalContent.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
@@ -764,24 +733,21 @@ html
         };
         closeUploadBtn.onclick = closeModal;
 
-        // Change target media type in form
         function setMediaType(type) {
             currentMediaType = type;
             document.getElementById('type-photo').className = `py-2.5 rounded-xl text-xs font-semibold border transition-all ${type === 'image' ? 'crystal-glass-active text-white' : 'border-white/10 text-slate-400 hover:text-white'}`;
             document.getElementById('type-video').className = `py-2.5 rounded-xl text-xs font-semibold border transition-all ${type === 'video' ? 'crystal-glass-active text-white' : 'border-white/10 text-slate-400 hover:text-white'}`;
             
-            // Adjust local file picker accepts
             if (type === 'image') {
                 mediaFile.accept = "image/*";
                 sizeWarning.textContent = "Foto dimampat auto. Had saiz fail ialah 1MB.";
             } else {
                 mediaFile.accept = "video/*";
-                sizeWarning.textContent = "Had saiz fail video tempatan ialah 1MB untuk simpanan awan.";
+                sizeWarning.textContent = "Had saiz fail video tempatan ialah 1MB.";
             }
             resetFilePicker();
         }
 
-        // Change input method in form
         function setInputMethod(method) {
             currentInputMethod = method;
             document.getElementById('input-local').className = `py-2 rounded-xl text-xs font-semibold border transition-all ${method === 'file' ? 'crystal-glass-active text-white' : 'border-white/10 text-slate-400 hover:text-white'}`;
@@ -798,7 +764,6 @@ html
             }
         }
 
-        // Reset the state of File picker container
         function resetFilePicker() {
             mediaFile.value = '';
             base64MediaString = '';
@@ -810,7 +775,6 @@ html
             filePickerPlaceholder.classList.remove('hidden');
         }
 
-        // File Selection handling
         mediaFile.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (!file) return;
@@ -818,13 +782,12 @@ html
             const reader = new FileReader();
             
             if (currentMediaType === 'image') {
-                // Resize/Compress photos locally on device before upload to respect 1MB cloud limit
+                // Client-side image compression before uploading (Sangat penting bagi had Firestore 1MB)
                 reader.onload = function(event) {
                     const img = new Image();
                     img.onload = function() {
                         const canvas = document.createElement('canvas');
-                        // Scale image to reasonable viewport (e.g. max width 1200px)
-                        const max_size = 1200;
+                        const max_size = 1200; // Limit resolution
                         let width = img.width;
                         let height = img.height;
 
@@ -845,11 +808,9 @@ html
                         const ctx = canvas.getContext('2d');
                         ctx.drawImage(img, 0, 0, width, height);
                         
-                        // Output compressed JPG with quality 0.7
-                        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+                        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.65);
                         base64MediaString = compressedBase64;
                         
-                        // Show preview
                         filePickerPlaceholder.classList.add('hidden');
                         filePreviewContainer.classList.remove('hidden');
                         filePreviewImg.classList.remove('hidden');
@@ -859,17 +820,14 @@ html
                 };
                 reader.readAsDataURL(file);
             } else {
-                // Video limit size check (cannot resize easily on browser, so strictly limit base64 sizes)
                 if (file.size > 1.2 * 1024 * 1024) {
-                    showToast("Fail Terlalu Besar", "Had saiz video adalah 1MB. Sila muat naik melalui URL atau pilih fail yang lebih kecil.", "error");
+                    showToast("Had Saiz Video", "Had video tempatan ialah 1MB. Sila gunakan kaedah Input URL jika video anda lebih besar.", "error");
                     mediaFile.value = '';
                     return;
                 }
                 
                 reader.onload = function(event) {
                     base64MediaString = event.target.result;
-                    
-                    // Show preview
                     filePickerPlaceholder.classList.add('hidden');
                     filePreviewContainer.classList.remove('hidden');
                     filePreviewVid.classList.remove('hidden');
@@ -879,7 +837,6 @@ html
             }
         });
 
-        // Form Submission to Create Media Item
         mediaForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!user) return;
@@ -891,31 +848,29 @@ html
 
             if (currentInputMethod === 'file') {
                 if (!base64MediaString) {
-                    showToast("Tiada Fail", "Sila pilih fail gambar atau video terlebih dahulu.", "error");
+                    showToast("Fail Kosong", "Sila pilih satu fail untuk meneruskan.", "error");
                     return;
                 }
                 finalUrl = base64MediaString;
             } else {
                 finalUrl = mediaUrl.value.trim();
                 if (!finalUrl) {
-                    showToast("Pautan Tiada", "Sila masukkan pautan media URL yang sah.", "error");
+                    showToast("Pautan Kosong", "Sila masukkan pautan web media yang betul.", "error");
                     return;
                 }
             }
 
             try {
-                // Change UI status to saving state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `
                     <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Menghantar fail...
+                    Menghantar...
                 `;
                 updateCloudStatus("Menyimpan...", "yellow");
 
-                // Save to Firestore using path criteria (RULE 1)
                 const mediaCollection = db.collection('artifacts').doc(appId).collection('users').doc(user.uid).collection('media');
                 await mediaCollection.add({
                     albumId: albumId,
@@ -925,16 +880,15 @@ html
                     createdAt: Date.now()
                 });
 
-                // Clear states & close
                 mediaTitle.value = '';
                 mediaUrl.value = '';
                 resetFilePicker();
                 closeModal();
-                showToast("Simpanan Berjaya", `"${title}" telah diletakkan di Cloud dengan selamat!`, "success");
+                showToast("Simpanan Berjaya", `"${title}" berjaya dimuat naik ke Cloud Vercel.`, "success");
                 updateCloudStatus("Awan Aktif", "green");
             } catch (error) {
-                console.error("Save media error:", error);
-                showToast("Ralat Awan", "Fail melebihi had saiz atau format tidak disokong.", "error");
+                console.error("Save media failed:", error);
+                showToast("Awan Terhad", "Ralat saiz atau rantaian pautan bermasalah.", "error");
                 updateCloudStatus("Awan Ralat", "red");
             } finally {
                 submitBtn.disabled = false;
@@ -947,12 +901,14 @@ html
             }
         });
 
-        // Delete Dialog Handlers
+        // ==========================================
+        // Safe Deletion Confirmation Dialog
+        // ==========================================
         const deleteDialog = document.getElementById('delete-dialog');
         const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
 
         function requestDeleteMedia(itemId, event) {
-            event.stopPropagation(); // Avoid triggering full screen preview
+            event.stopPropagation();
             deleteTargetId = itemId;
             deleteDialog.classList.remove('hidden');
         }
@@ -970,20 +926,19 @@ html
                 const mediaCollection = db.collection('artifacts').doc(appId).collection('users').doc(user.uid).collection('media');
                 await mediaCollection.doc(deleteTargetId).delete();
                 
-                showToast("Item Dipadam", "Fail dikeluarkan dari awan.", "success");
+                showToast("Telah Dipadam", "Media dikeluarkan sepenuhnya.", "success");
                 updateCloudStatus("Awan Aktif", "green");
             } catch (error) {
-                console.error("Delete media error:", error);
-                showToast("Kegagalan Padam", "Tidak dapat memadam item daripada storan cloud.", "error");
+                console.error("Delete media failed:", error);
+                showToast("Gagal Memadam", "Pangkalan awan gagal diakses.", "error");
                 updateCloudStatus("Awan Ralat", "red");
             } finally {
                 closeDeleteDialog();
             }
         };
 
-        // Fullscreen Modal Media Preview
+        // Fullscreen Lightbox Media Viewer
         function viewLargeMedia(url, type, title) {
-            // Create temporary full screen light-box
             const lightbox = document.createElement('div');
             lightbox.className = "fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4";
             
@@ -1016,9 +971,7 @@ html
             document.body.appendChild(lightbox);
         }
 
-        // ==========================================
-        // Custom Notifications (Toast) System
-        // ==========================================
+        // Custom Notification Toast Control
         let toastTimeout = null;
         const toast = document.getElementById('notification-toast');
         const toastTitle = document.getElementById('toast-title');
@@ -1055,5 +1008,4 @@ html
     </script>
 </body>
 </html>
-
 
