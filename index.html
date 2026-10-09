@@ -41,12 +41,12 @@
 
   <style>
     :root {
-      --brand-50: #ecfdf5;
-      --brand-100: #d1fae5;
-      --brand-500: #10b981;
-      --brand-600: #059669;
-      --brand-700: #047857;
-      --brand-glow: rgba(16, 185, 129, 0.25);
+      --brand-50: #f8fafc;
+      --brand-100: #f1f5f9;
+      --brand-500: #ffffff;
+      --brand-600: rgba(255, 255, 255, 0.2);
+      --brand-700: rgba(255, 255, 255, 0.3);
+      --brand-glow: rgba(255, 255, 255, 0.25);
       --card-border: rgba(255, 255, 255, 0.12);
     }
 
@@ -107,14 +107,14 @@
       <!-- School Info Header -->
       <div class="flex items-center gap-2 sm:gap-3.5 shrink-0">
         <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 p-1.5 sm:p-2 flex items-center justify-center shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-          <i class="fa-solid fa-graduation-cap text-base sm:text-xl text-brand-500"></i>
+          <i class="fa-solid fa-graduation-cap text-base sm:text-xl text-white"></i>
         </div>
         <div class="min-w-0">
           <div class="flex items-center gap-1.5 sm:gap-2">
             <h1 class="font-display font-bold text-xs sm:text-lg tracking-tight text-white whitespace-nowrap">
               SMK RAJA ALI
             </h1>
-            <span class="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-md bg-emerald-500/20 backdrop-blur-md text-emerald-300 border border-emerald-400/40 shrink-0 shadow-sm">KL</span>
+            <span class="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-md bg-white/15 backdrop-blur-md text-white border border-white/30 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">KL</span>
           </div>
           <p class="text-[10px] sm:text-xs text-slate-300 font-medium hidden sm:block">Ujian Akhir Sesi Akademik (UASA) 2026</p>
         </div>
@@ -123,7 +123,7 @@
       <!-- Form Segmented Control (Crystal Glass Theme) -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
         <div class="bg-slate-950/30 backdrop-blur-md border border-white/20 p-1 rounded-xl sm:rounded-2xl flex text-[11px] sm:text-xs font-semibold shadow-inner whitespace-nowrap">
-          <button id="btn-ting1" onclick="setTingkatan(1)" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-emerald-500/35 backdrop-blur-md text-white border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] whitespace-nowrap">
+          <button id="btn-ting1" onclick="setTingkatan(1)" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap">
             Tingkatan 1
           </button>
           <button id="btn-ting2" onclick="setTingkatan(2)" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap">
@@ -138,20 +138,20 @@
 
     <!-- Hero Countdown Banner -->
     <section class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden glow-effect border border-white/10">
-      <div class="absolute -top-32 -right-32 w-80 h-80 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-32 -right-32 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
         
         <!-- Left Banner Info -->
         <div class="space-y-4 max-w-xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-brand-100">
-            <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white">
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
             <span id="countdown-mode-label">Hitung Mundur Tarikh Mula UASA</span>
           </div>
 
           <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Peperiksaan UASA <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-100 to-white" id="display-tingkatan-title">Tingkatan 1</span>
+            Peperiksaan UASA <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400" id="display-tingkatan-title">Tingkatan 1</span>
           </h2>
 
           <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
@@ -159,13 +159,13 @@
             Persiapkan diri anda dengan pengurusan masa & jadual ulang kaji yang tersusun.
           </p>
 
-          <!-- Countdown Mode Target Switcher (Crystal Glass Theme for Mula Peperiksaan) -->
+          <!-- Countdown Mode Target Switcher (Crystal Glass Theme) -->
           <div class="pt-1 flex flex-wrap gap-2 text-xs">
-            <button onclick="setCountdownTarget('start')" id="btn-target-start" class="px-3.5 py-2 rounded-xl bg-emerald-500/35 backdrop-blur-md text-white font-medium border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] hover:bg-emerald-500/45 transition">
+            <button onclick="setCountdownTarget('start')" id="btn-target-start" class="px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition">
               <i class="fa-solid fa-flag-checkered mr-1.5"></i> Mula Peperiksaan
             </button>
             <button onclick="setCountdownTarget('next')" id="btn-target-next" class="px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition">
-              <i class="fa-solid fa-clock text-brand-500 mr-1.5"></i> Kertas Seterusnya
+              <i class="fa-solid fa-clock text-slate-300 mr-1.5"></i> Kertas Seterusnya
             </button>
           </div>
         </div>
@@ -193,10 +193,10 @@
             </div>
 
             <!-- Seconds Box -->
-            <div class="bg-slate-950/80 border border-brand-500/40 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md relative overflow-hidden">
-              <div class="absolute inset-0 bg-brand-500/10 pointer-events-none animate-pulse"></div>
-              <span id="timer-seconds" class="font-display text-2xl sm:text-4xl font-extrabold text-brand-500 tracking-tight">00</span>
-              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-brand-100/70 mt-1">Saat</span>
+            <div class="bg-slate-950/80 border border-white/30 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md relative overflow-hidden">
+              <div class="absolute inset-0 bg-white/10 pointer-events-none animate-pulse"></div>
+              <span id="timer-seconds" class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">00</span>
+              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-300 mt-1">Saat</span>
             </div>
 
           </div>
@@ -204,10 +204,10 @@
           <!-- Next Paper Bar -->
           <div id="next-paper-info" class="p-3 rounded-2xl bg-slate-950/70 border border-white/10 text-xs text-slate-300 flex items-center justify-between gap-3">
             <div class="flex items-center gap-2 truncate">
-              <i class="fa-solid fa-bullhorn text-brand-500 shrink-0"></i>
+              <i class="fa-solid fa-bullhorn text-slate-300 shrink-0"></i>
               <span id="next-paper-text" class="truncate font-medium">Memuatkan kertas seterusnya...</span>
             </div>
-            <span id="next-paper-time" class="font-mono text-brand-500 font-bold shrink-0 bg-brand-500/10 px-2 py-0.5 rounded-lg border border-brand-500/20">--:--</span>
+            <span id="next-paper-time" class="font-mono text-white font-bold shrink-0 bg-white/15 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20">--:--</span>
           </div>
         </div>
 
@@ -218,7 +218,7 @@
       
       <!-- Filter Day Scrollable Pills -->
       <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar text-xs font-semibold">
-        <button onclick="filterDay('all')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-brand-600 text-white shadow-sm shrink-0 transition" data-day="all">
+        <button onclick="filterDay('all')" class="day-tab px-4 py-2.5 rounded-xl border border-white/30 bg-white/20 backdrop-blur-md text-white shadow-sm shrink-0 transition" data-day="all">
           <i class="fa-solid fa-calendar-days mr-1.5"></i> Semua Hari
         </button>
         <button onclick="filterDay('12/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="12/10/26">
@@ -249,7 +249,7 @@
         </div>
 
         <button onclick="openModal('pomodoro-modal')" class="px-3.5 py-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 text-xs font-semibold text-slate-200 flex items-center gap-2 shrink-0 transition" title="Buka Mod Pemfokusan Ulang Kaji">
-          <i class="fa-solid fa-stopwatch text-brand-500"></i>
+          <i class="fa-solid fa-stopwatch text-slate-300"></i>
           <span class="hidden sm:inline">Mod Ulang Kaji</span>
         </button>
       </div>
@@ -273,7 +273,7 @@
       <div class="glass-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-500 border border-brand-500/25 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
               <i class="fa-solid fa-triangle-exclamation text-base"></i>
             </div>
             <div>
@@ -288,15 +288,15 @@
 
           <ul class="space-y-2 text-xs text-slate-300">
             <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-notes-medical text-emerald-400 shrink-0"></i>
+              <i class="fa-solid fa-notes-medical text-slate-200 shrink-0"></i>
               <span><strong>1. Cuti Sakit:</strong> Mesti mempunyai Sijil Sakit rasmi (MC).</span>
             </li>
             <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-user-shield text-blue-400 shrink-0"></i>
+              <i class="fa-solid fa-user-shield text-slate-300 shrink-0"></i>
               <span><strong>2. Wakil Sekolah:</strong> Program rasmi yang diluluskan.</span>
             </li>
             <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-ribbon text-purple-400 shrink-0"></i>
+              <i class="fa-solid fa-ribbon text-slate-300 shrink-0"></i>
               <span><strong>3. Urusan Keluarga:</strong> Kecemasan atau kematian keluarga.</span>
             </li>
           </ul>
@@ -308,7 +308,7 @@
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-500 border border-brand-500/25 flex items-center justify-center shrink-0">
+              <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
                 <i class="fa-solid fa-list-check text-base"></i>
               </div>
               <div>
@@ -316,24 +316,24 @@
                 <p class="text-xs text-slate-400">Persediaan Sebelum Dewan</p>
               </div>
             </div>
-            <span id="checklist-progress" class="text-xs font-bold text-brand-500 bg-brand-500/15 px-2.5 py-1 rounded-lg border border-brand-500/20">0/4</span>
+            <span id="checklist-progress" class="text-xs font-bold text-white bg-white/15 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/25">0/4</span>
           </div>
 
           <div class="space-y-2 text-xs" id="checklist-items">
             <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-brand-500 focus:ring-brand-500 w-4 h-4 bg-slate-900">
+              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
               <span class="text-slate-300">Set alat tulis (Pensel 2B, pemadam, pen)</span>
             </label>
             <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-brand-500 focus:ring-brand-500 w-4 h-4 bg-slate-900">
+              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
               <span class="text-slate-300">Kalkulator saintifik berkuasa (Math/Sains)</span>
             </label>
             <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-brand-500 focus:ring-brand-500 w-4 h-4 bg-slate-900">
+              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
               <span class="text-slate-300">Pakaian seragam kemas & disiplin</span>
             </label>
             <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-brand-500 focus:ring-brand-500 w-4 h-4 bg-slate-900">
+              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
               <span class="text-slate-300">Tidur secukupnya malam sebelum ujian</span>
             </label>
           </div>
@@ -344,7 +344,7 @@
       <div class="glass-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-500 border border-brand-500/25 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
               <i class="fa-solid fa-lightbulb text-base"></i>
             </div>
             <div>
@@ -360,7 +360,7 @@
 
         <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
           <span>SMK Raja Ali 2026</span>
-          <span class="text-brand-500 font-medium">#UsahaTanggaKekejayaan</span>
+          <span class="text-slate-200 font-semibold">#UsahaTanggaKekejayaan</span>
         </div>
       </div>
 
@@ -376,7 +376,7 @@
       </button>
 
       <div class="flex items-center gap-3">
-        <div class="p-3 rounded-2xl bg-brand-500/20 text-brand-500 border border-brand-500/30">
+        <div class="p-3 rounded-2xl bg-white/15 text-white border border-white/25 backdrop-blur-md">
           <i class="fa-solid fa-school text-xl"></i>
         </div>
         <div>
@@ -388,19 +388,19 @@
       <div class="space-y-3 text-xs text-slate-300 leading-relaxed max-h-80 overflow-y-auto pr-1">
         <p class="font-semibold text-white">Ketentuan Utama Peperiksaan:</p>
         <ul class="list-disc pl-4 space-y-1 text-slate-300">
-          <li>Peperiksaan bermula pada <strong class="text-brand-500">12 Oktober 2026 hingga 19 Oktober 2026</strong>.</li>
+          <li>Peperiksaan bermula pada <strong class="text-white">12 Oktober 2026 hingga 19 Oktober 2026</strong>.</li>
           <li>Murid wajib berada di sekolah sekurang-kurangnya 15 minit sebelum kertas pertama bermula.</li>
           <li>Waktu REHAT rasmi adalah dari jam <strong>9.30 – 10.00 Pagi</strong> setiap hari.</li>
-          <li>Subjek KKQ dan Bahasa Arab terpakai untuk murid <strong class="text-brand-500">Kelas Alfa sahaja</strong>.</li>
+          <li>Subjek KKQ dan Bahasa Arab terpakai untuk murid <strong class="text-white">Kelas Alfa sahaja</strong>.</li>
         </ul>
 
-        <div class="mt-4 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200">
+        <div class="mt-4 p-3.5 rounded-2xl bg-white/10 border border-white/20 text-slate-200 backdrop-blur-md">
           <p class="font-bold mb-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Peringatan Penting!</p>
           <p>Ujian ulangan tidak akan diberikan seandainya murid ponteng atau tidak hadir tanpa dokumen sah yang dinyatakan oleh pihak pentadbiran sekolah.</p>
         </div>
       </div>
 
-      <button onclick="closeModal('info-modal')" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs transition">
+      <button onclick="closeModal('info-modal')" class="w-full py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-semibold text-xs border border-white/30 backdrop-blur-md transition shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
         Saya Faham & Bersedia
       </button>
     </div>
@@ -414,18 +414,18 @@
       </button>
 
       <div>
-        <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-500 border border-brand-500/30 text-xs font-bold">Teknik Pomodoro 25 Minit</span>
+        <span class="px-3 py-1 rounded-full bg-white/15 text-white border border-white/25 backdrop-blur-md text-xs font-bold">Teknik Pomodoro 25 Minit</span>
         <h3 class="font-display font-bold text-2xl text-white mt-2">Pemfokusan Ulang Kaji</h3>
         <p class="text-xs text-slate-400 mt-1">Fokus 25 Minit, Rehat 5 Minit</p>
       </div>
 
       <div class="py-6 bg-slate-950/80 rounded-2xl border border-white/10">
-        <span id="pomo-display" class="font-display text-5xl font-extrabold text-brand-500 tracking-wider">25:00</span>
+        <span id="pomo-display" class="font-display text-5xl font-extrabold text-white tracking-wider">25:00</span>
         <p id="pomo-status" class="text-xs text-slate-400 font-medium mt-2">Sedia Untuk Bermula</p>
       </div>
 
       <div class="flex items-center justify-center gap-3">
-        <button id="pomo-start-btn" onclick="togglePomodoro()" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition flex items-center gap-2">
+        <button id="pomo-start-btn" onclick="togglePomodoro()" class="px-6 py-3 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs border border-white/30 backdrop-blur-md transition flex items-center gap-2 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
           <i class="fa-solid fa-play"></i> Mula
         </button>
         <button onclick="resetPomodoro()" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition">
@@ -777,11 +777,11 @@
       const titleDisplay = document.getElementById('display-tingkatan-title');
 
       if (ting === 1) {
-        btn1.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-emerald-500/35 backdrop-blur-md text-white border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] whitespace-nowrap";
+        btn1.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap";
         btn2.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap";
         titleDisplay.textContent = "Tingkatan 1";
       } else {
-        btn2.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-emerald-500/35 backdrop-blur-md text-white border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] whitespace-nowrap";
+        btn2.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap";
         btn1.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap";
         titleDisplay.textContent = "Tingkatan 2";
       }
@@ -797,11 +797,11 @@
       const label = document.getElementById('countdown-mode-label');
 
       if (mode === 'start') {
-        btnStart.className = "px-3.5 py-2 rounded-xl bg-emerald-500/35 backdrop-blur-md text-white font-medium border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] hover:bg-emerald-500/45 transition";
+        btnStart.className = "px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition";
         btnNext.className = "px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition";
         label.textContent = "Hitung Mundur Tarikh Mula UASA";
       } else {
-        btnNext.className = "px-3.5 py-2 rounded-xl bg-emerald-500/35 backdrop-blur-md text-white font-medium border border-emerald-400/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] hover:bg-emerald-500/45 transition";
+        btnNext.className = "px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition";
         btnStart.className = "px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition";
         label.textContent = "Hitung Mundur Kertas Seterusnya";
       }
@@ -813,7 +813,7 @@
       selectedDayFilter = day;
       document.querySelectorAll('.day-tab').forEach(tab => {
         if (tab.getAttribute('data-day') === day) {
-          tab.className = "day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-brand-600 text-white shadow-sm shrink-0 transition";
+          tab.className = "day-tab px-4 py-2.5 rounded-xl border border-white/30 bg-white/20 backdrop-blur-md text-white shadow-sm shrink-0 transition";
         } else {
           tab.className = "day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition";
         }
@@ -865,8 +865,8 @@
         if (now < startISO) {
           statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-slate-800/80 text-slate-300 text-[10px] font-medium border border-white/10">Akan Datang</span>`;
         } else if (now >= startISO && now <= endISO) {
-          statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 animate-pulse">SEDANG BERLANGSUNG</span>`;
-          cardStyle = 'border-brand-500/60 ring-1 ring-brand-500/30';
+          statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold border border-white/30 animate-pulse">SEDANG BERLANGSUNG</span>`;
+          cardStyle = 'border-white/50 ring-1 ring-white/30';
         } else {
           statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-slate-900/40 text-slate-500 text-[10px] font-medium">Selesai</span>`;
         }
@@ -875,7 +875,7 @@
           return `
             <div class="glass-card rounded-2xl p-4 flex items-center justify-between opacity-75 border-dashed border-white/15 bg-slate-950/30">
               <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-white/10 text-slate-200 border border-white/20 flex items-center justify-center shrink-0">
                   <i class="fa-solid fa-mug-hot text-sm"></i>
                 </div>
                 <div>
@@ -883,7 +883,7 @@
                   <p class="text-[11px] text-slate-400">${item.startTime} - ${item.endTime}</p>
                 </div>
               </div>
-              <span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">30 Minit</span>
+              <span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-white/10 text-slate-200 border border-white/20">30 Minit</span>
             </div>
           `;
         }
@@ -893,7 +893,7 @@
             <div class="space-y-3">
               <!-- Top Row: Date & Status -->
               <div class="flex items-center justify-between text-xs">
-                <span class="font-semibold text-brand-500 flex items-center gap-1.5 text-[11px]">
+                <span class="font-semibold text-slate-200 flex items-center gap-1.5 text-[11px]">
                   <i class="fa-regular fa-calendar"></i>
                   ${item.dayLabel}
                 </span>
@@ -902,7 +902,7 @@
 
               <!-- Subject & Time -->
               <div class="flex items-start gap-3 pt-1">
-                <div class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-500 border border-brand-500/25 flex items-center justify-center shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
                   <i class="fa-solid ${item.icon} text-base"></i>
                 </div>
                 <div class="space-y-0.5 min-w-0 flex-1">
@@ -917,9 +917,9 @@
               <!-- Live Individual Subject Countdown -->
               <div class="p-2.5 rounded-xl bg-slate-950/70 border border-white/10 flex items-center justify-between text-xs">
                 <span class="text-[11px] text-slate-400 font-medium flex items-center gap-1.5">
-                  <i class="fa-solid fa-hourglass-half text-brand-500"></i> Countdown:
+                  <i class="fa-solid fa-hourglass-half text-slate-300"></i> Countdown:
                 </span>
-                <span id="card-timer-${item.id}" class="font-mono font-bold text-brand-400">--:--:--</span>
+                <span id="card-timer-${item.id}" class="font-mono font-bold text-slate-200">--:--:--</span>
               </div>
             </div>
 
@@ -929,7 +929,7 @@
                 <i class="fa-solid fa-user-tie text-slate-400 text-[11px]"></i>
                 <span class="truncate">Guru: <strong class="text-slate-200 font-semibold">${teacher}</strong></span>
               </div>
-              ${item.note ? `<span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-medium text-[10px] shrink-0 border border-purple-500/20">${item.note}</span>` : ''}
+              ${item.note ? `<span class="px-2 py-0.5 rounded bg-white/15 text-slate-200 font-medium text-[10px] shrink-0 border border-white/20">${item.note}</span>` : ''}
             </div>
           </div>
         `;
@@ -1014,12 +1014,12 @@
           } else {
             cardTimerEl.textContent = `${String(h).padStart(2, '0')}j ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
           }
-          cardTimerEl.className = "font-mono font-bold text-brand-400";
+          cardTimerEl.className = "font-mono font-bold text-slate-200";
         } else if (diffEnd > 0) {
           const m = Math.floor(diffEnd / (1000 * 60));
           const s = Math.floor((diffEnd % (1000 * 60)) / 1000);
           cardTimerEl.textContent = `Baki ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
-          cardTimerEl.className = "font-mono font-bold text-emerald-400 animate-pulse";
+          cardTimerEl.className = "font-mono font-bold text-white animate-pulse";
         } else {
           cardTimerEl.textContent = "Peperiksaan Tamat";
           cardTimerEl.className = "font-sans text-[11px] font-medium text-slate-500";
