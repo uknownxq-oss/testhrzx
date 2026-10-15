@@ -1,1101 +1,331 @@
 
 <!DOCTYPE html>
-<html lang="ms" class="dark">
+<html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown UASA 2026 - SMK Raja Ali</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Skrap Digital Saya</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Notebook paper background */
+            background-color: #fdf6e3;
+            background-image: linear-gradient(transparent 95%, #cbd5e1 5%);
+            background-size: 100% 2.5rem;
+            font-family: 'Caveat', cursive;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: 'var(--brand-50)',
-              100: 'var(--brand-100)',
-              500: 'var(--brand-500)',
-              600: 'var(--brand-600)',
-              700: 'var(--brand-700)',
-              glow: 'var(--brand-glow)',
+        /* The vertical red margin line of the notebook */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 10%;
+            width: 2px;
+            background-color: rgba(239, 68, 68, 0.4);
+            z-index: -1;
+        }
+
+        @media (max-width: 640px) {
+            body::before {
+                left: 1rem;
             }
-          }
+            body {
+                background-size: 100% 2rem;
+            }
         }
-      }
-    }
-  </script>
 
-  <style>
-    :root {
-      --brand-50: #f8fafc;
-      --brand-100: #f1f5f9;
-      --brand-500: #ffffff;
-      --brand-600: rgba(255, 255, 255, 0.2);
-      --brand-700: rgba(255, 255, 255, 0.3);
-      --brand-glow: rgba(255, 255, 255, 0.25);
-      --card-border: rgba(255, 255, 255, 0.12);
-    }
+        /* Polaroid style for photos and videos */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.15);
+            position: relative;
+            transition: transform 0.2s ease;
+            border-radius: 2px;
+        }
 
-    body {
-      background-image: url('https://res.cloudinary.com/ajhuqnra/image/upload/v1791527738/18dad0779d83a34f56c38e74461352e5.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      min-height: 100vh;
-      color: #f8fafc;
-    }
+        .polaroid:hover {
+            transform: scale(1.02) rotate(0deg) !important;
+            z-index: 10;
+        }
 
-    .glass-card {
-      background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url('https://res.cloudinary.com/ajhuqnra/image/upload/v1791527726/c2709184a8b8ac834bf489e1eb67864b.jpg');
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-    }
+        /* Masking tape effect */
+        .tape {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 100px;
+            height: 30px;
+            background-color: rgba(255, 255, 230, 0.6);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 2;
+            border-radius: 2px;
+        }
 
-    .glow-effect {
-      box-shadow: 0 10px 30px -10px var(--brand-glow);
-    }
+        .tape:after {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 230, 0.6));
+            border-left: 1px dotted rgba(0,0,0,0.1);
+        }
 
-    /* Scrollbar Styling */
-    ::-webkit-scrollbar {
-      height: 6px;
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(15, 23, 42, 0.5);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
+        .tape:before {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to left, transparent, rgba(255, 255, 230, 0.6));
+            border-right: 1px dotted rgba(0,0,0,0.1);
+        }
 
-    /* Hide scrollbar for horizontal tab scroll */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf6e3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
 </head>
-<body class="font-sans antialiased text-slate-100 pb-16 selection:bg-brand-500 selection:text-white">
+<body class="text-gray-800 antialiased relative pt-8 pb-24 px-4 sm:px-10 lg:px-24">
 
-  <header class="sticky top-0 z-40 border-b border-white/20 bg-slate-950/25 backdrop-blur-xl shadow-lg transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-[4.25rem] py-2.5 flex items-center justify-between gap-2 sm:gap-4">
-      
-      <!-- School Info Header -->
-      <div class="flex items-center gap-2 sm:gap-3.5 shrink-0">
-        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 p-1 sm:p-1.5 flex items-center justify-center shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] overflow-hidden">
-          <img src="https://res.cloudinary.com/ajhuqnra/image/upload/v1791539502/IMG-20261009-WA0027.png" alt="Logo SMK Raja Ali" class="w-full h-full object-contain">
+    <header class="mb-12 text-center mt-4 sm:ml-[10%]">
+        <h1 class="text-5xl sm:text-6xl font-bold text-slate-800 mb-2" style="font-family: 'Permanent Marker', cursive; transform: rotate(-2deg);">
+            Buku Skrap Memori
+        </h1>
+        <p class="text-2xl sm:text-3xl text-slate-600">Simpan gambar & video kegemaran tanpa had di sini!</p>
+    </header>
+
+    <!-- Gallery Container -->
+    <main id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:ml-[10%]">
+        <!-- Default Empty State -->
+        <div id="emptyState" class="col-span-full text-center py-20 opacity-70">
+            <p class="text-3xl sm:text-4xl text-slate-500 mb-4">Buku ini masih kosong...</p>
+            <p class="text-2xl sm:text-3xl text-slate-400">Tekan butang tambah di bawah untuk mula menampal kenangan!</p>
         </div>
-        <div class="min-w-0">
-          <div class="flex items-center gap-1.5 sm:gap-2">
-            <h1 class="font-display font-bold text-xs sm:text-lg tracking-tight text-white whitespace-nowrap">
-              SMK RAJA ALI
-            </h1>
-            <span class="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-md bg-white/15 backdrop-blur-md text-white border border-white/30 shrink-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">KL</span>
-          </div>
-          <p class="text-[10px] sm:text-xs text-slate-300 font-medium hidden sm:block">Ujian Akhir Sesi Akademik (UASA) 2026</p>
-        </div>
-      </div>
+    </main>
 
-      <!-- Form Segmented Control (Crystal Glass Theme) -->
-      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-        <div class="bg-slate-950/30 backdrop-blur-md border border-white/20 p-1 rounded-xl sm:rounded-2xl flex text-[11px] sm:text-xs font-semibold shadow-inner whitespace-nowrap">
-          <button id="btn-ting1" onclick="setTingkatan(1)" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap">
-            Tingkatan 1
-          </button>
-          <button id="btn-ting2" onclick="setTingkatan(2)" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap">
-            Tingkatan 2
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+    <button id="addBtn" class="fixed bottom-8 right-8 bg-amber-200 hover:bg-amber-300 text-amber-900 border-2 border-amber-400 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center text-4xl sm:text-5xl shadow-xl transition-transform transform hover:scale-110 z-50" style="box-shadow: 4px 4px 0px rgba(0,0,0,0.1);">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+    </button>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-8">
-
-    <!-- Hero Countdown Banner -->
-    <section class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden glow-effect border border-white/10">
-      <div class="absolute -top-32 -right-32 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-        
-        <!-- Left Banner Info -->
-        <div class="space-y-4 max-w-xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white">
-            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-            <span id="countdown-mode-label">Hitung Mundur Tarikh Mula UASA</span>
-          </div>
-
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Peperiksaan UASA <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400" id="display-tingkatan-title">Tingkatan 1</span>
-          </h2>
-
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Mula: <strong class="text-white">Isnin, 12 Oktober 2026 (7:55 Pagi)</strong>.
-            Persiapkan diri anda dengan pengurusan masa & jadual ulang kaji yang tersusun.
-          </p>
-
-          <!-- Countdown Mode Target Switcher (Crystal Glass Theme) -->
-          <div class="pt-1 flex flex-wrap gap-2 text-xs">
-            <button onclick="setCountdownTarget('start')" id="btn-target-start" class="px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition">
-              <i class="fa-solid fa-flag-checkered mr-1.5"></i> Mula Peperiksaan
-            </button>
-            <button onclick="setCountdownTarget('next')" id="btn-target-next" class="px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition">
-              <i class="fa-solid fa-clock text-slate-300 mr-1.5"></i> Kertas Seterusnya
-            </button>
-          </div>
-        </div>
-
-        <!-- Right Timer Boxes -->
-        <div class="w-full lg:w-auto space-y-4">
-          <div class="grid grid-cols-4 gap-3 sm:gap-4 text-center">
+    <div id="uploadModal" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-yellow-100 p-8 rounded-sm shadow-2xl w-full max-w-md relative transform rotate-1">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-red-400/30 rotate-2 shadow-sm"></div>
             
-            <!-- Days Box -->
-            <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md">
-              <span id="timer-days" class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">00</span>
-              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Hari</span>
+            <h2 class="text-4xl font-bold mb-6 text-yellow-900">Tampal Memori Baru</h2>
+            
+            <div class="mb-5">
+                <label class="block text-2xl text-yellow-800 mb-2">Pilih Fail (Gambar/Video):</label>
+                <input type="file" id="fileInput" accept="image/*,video/*" class="w-full text-xl file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xl file:font-semibold file:bg-yellow-200 file:text-yellow-800 hover:file:bg-yellow-300 font-sans cursor-pointer bg-white/50 p-2 rounded-lg border-2 border-dashed border-yellow-400">
             </div>
 
-            <!-- Hours Box -->
-            <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md">
-              <span id="timer-hours" class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">00</span>
-              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Jam</span>
+            <div class="mb-6">
+                <label class="block text-2xl text-yellow-800 mb-2">Nota / Kapsyen:</label>
+                <textarea id="captionInput" rows="3" class="w-full bg-white/60 text-2xl p-3 rounded-lg border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 resize-none" placeholder="Tulis sesuatu tentang memori ini..."></textarea>
             </div>
 
-            <!-- Minutes Box -->
-            <div class="bg-slate-950/80 border border-white/10 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md">
-              <span id="timer-minutes" class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">00</span>
-              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 mt-1">Minit</span>
+            <div class="flex justify-end space-x-4">
+                <button id="cancelBtn" class="px-6 py-2 text-2xl text-yellow-800 hover:text-yellow-900 font-bold transition-colors">Batal</button>
+                <button id="saveBtn" class="px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 text-2xl font-bold rounded-lg shadow-md transition-transform active:scale-95">Tampal!</button>
             </div>
-
-            <!-- Seconds Box -->
-            <div class="bg-slate-950/80 border border-white/30 rounded-2xl p-3 sm:p-5 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[95px] shadow-lg backdrop-blur-md relative overflow-hidden">
-              <div class="absolute inset-0 bg-white/10 pointer-events-none animate-pulse"></div>
-              <span id="timer-seconds" class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight">00</span>
-              <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-300 mt-1">Saat</span>
-            </div>
-
-          </div>
-
-          <!-- Next Paper Bar -->
-          <div id="next-paper-info" class="p-3 rounded-2xl bg-slate-950/70 border border-white/10 text-xs text-slate-300 flex items-center justify-between gap-3">
-            <div class="flex items-center gap-2 truncate">
-              <i class="fa-solid fa-bullhorn text-slate-300 shrink-0"></i>
-              <span id="next-paper-text" class="truncate font-medium">Memuatkan kertas seterusnya...</span>
-            </div>
-            <span id="next-paper-time" class="font-mono text-white font-bold shrink-0 bg-white/15 backdrop-blur-md px-2 py-0.5 rounded-lg border border-white/20">--:--</span>
-          </div>
         </div>
-
-      </div>
-    </section>
-
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-      
-      <!-- Filter Day Scrollable Pills -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar text-xs font-semibold">
-        <button onclick="filterDay('all')" class="day-tab px-4 py-2.5 rounded-xl border border-white/30 bg-white/20 backdrop-blur-md text-white shadow-sm shrink-0 transition" data-day="all">
-          <i class="fa-solid fa-calendar-days mr-1.5"></i> Semua Hari
-        </button>
-        <button onclick="filterDay('12/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="12/10/26">
-          Isnin (12 Okt)
-        </button>
-        <button onclick="filterDay('13/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="13/10/26">
-          Selasa (13 Okt)
-        </button>
-        <button onclick="filterDay('14/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="14/10/26">
-          Rabu (14 Okt)
-        </button>
-        <button onclick="filterDay('15/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="15/10/26">
-          Khamis (15 Okt)
-        </button>
-        <button onclick="filterDay('16/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="16/10/26">
-          Jumaat (16 Okt)
-        </button>
-        <button onclick="filterDay('19/10/26')" class="day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition" data-day="19/10/26">
-          Isnin (19 Okt)
-        </button>
-      </div>
-
-      <!-- Search & Tools Bar -->
-      <div class="flex flex-wrap items-center gap-2 shrink-0">
-        <div class="relative w-full sm:w-52">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-          <input type="text" id="search-input" oninput="handleSearch()" placeholder="Cari subjek atau guru..." class="w-full bg-slate-900/90 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-500 transition">
-        </div>
-
-        <button onclick="openModal('pomodoro-modal')" class="px-3.5 py-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/10 text-xs font-semibold text-slate-200 flex items-center gap-2 shrink-0 transition" title="Buka Mod Pemfokusan Ulang Kaji">
-          <i class="fa-solid fa-stopwatch text-slate-300"></i>
-          <span class="hidden sm:inline">Mod Ulang Kaji</span>
-        </button>
-      </div>
-
     </div>
 
-    <section id="timetable-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Dynamic Timetable Cards rendered via JS -->
-    </section>
-
-    <!-- Empty State -->
-    <div id="no-results" class="hidden glass-card rounded-2xl p-12 text-center max-w-md mx-auto my-8">
-      <i class="fa-solid fa-book-open text-4xl text-slate-500 mb-3"></i>
-      <h3 class="text-base font-bold text-white">Carian Tidak Ditemui</h3>
-      <p class="text-xs text-slate-400 mt-1">Sila pastikan ejaan subjek atau guru betul.</p>
+    <div id="alertModal" class="hidden fixed inset-0 bg-transparent flex items-end sm:items-start justify-center z-[60] p-4 sm:pt-10 pointer-events-none">
+        <div class="bg-slate-800 text-white px-6 py-4 rounded-xl shadow-2xl text-2xl flex items-center space-x-3 transform transition-transform duration-300 translate-y-full sm:-translate-y-full opacity-0" id="alertBox">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span id="alertMessage">Mesej di sini</span>
+        </div>
     </div>
 
-    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
-      
-      <!-- Exam Rules Card -->
-      <div class="glass-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
-              <i class="fa-solid fa-triangle-exclamation text-base"></i>
-            </div>
-            <div>
-              <h3 class="font-display font-bold text-base text-white">Syarat Ujian Ulangan</h3>
-              <p class="text-xs text-slate-400">SMK Raja Ali 2026</p>
-            </div>
-          </div>
-          
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Ujian Ulangan hanya dibenarkan atas sebab khas yang diluluskan sekolah:
-          </p>
+    <script>
+        // State variables
+        const entries = [];
+        
+        // DOM Elements
+        const gallery = document.getElementById('gallery');
+        const emptyState = document.getElementById('emptyState');
+        const addBtn = document.getElementById('addBtn');
+        const uploadModal = document.getElementById('uploadModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const saveBtn = document.getElementById('saveBtn');
+        const fileInput = document.getElementById('fileInput');
+        const captionInput = document.getElementById('captionInput');
+        const alertModal = document.getElementById('alertModal');
+        const alertBox = document.getElementById('alertBox');
+        const alertMessage = document.getElementById('alertMessage');
 
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-notes-medical text-slate-200 shrink-0"></i>
-              <span><strong>1. Cuti Sakit:</strong> Mesti mempunyai Sijil Sakit rasmi (MC).</span>
-            </li>
-            <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-user-shield text-slate-300 shrink-0"></i>
-              <span><strong>2. Wakil Sekolah:</strong> Program rasmi yang diluluskan.</span>
-            </li>
-            <li class="flex items-center gap-2.5 bg-slate-950/50 p-2.5 rounded-xl border border-white/5">
-              <i class="fa-solid fa-ribbon text-slate-300 shrink-0"></i>
-              <span><strong>3. Urusan Keluarga:</strong> Kecemasan atau kematian keluarga.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+        function showAlert(message) {
+            alertMessage.textContent = message;
+            alertModal.classList.remove('hidden');
+            
+            // Trigger animation
+            setTimeout(() => {
+                alertBox.classList.remove('translate-y-full', 'sm:-translate-y-full', 'opacity-0');
+            }, 10);
 
-      <!-- Checklist Card -->
-      <div class="glass-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-list-check text-base"></i>
-              </div>
-              <div>
-                <h3 class="font-display font-bold text-base text-white">Senarai Semak</h3>
-                <p class="text-xs text-slate-400">Persediaan Sebelum Dewan</p>
-              </div>
-            </div>
-            <span id="checklist-progress" class="text-xs font-bold text-white bg-white/15 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/25">0/4</span>
-          </div>
-
-          <div class="space-y-2 text-xs" id="checklist-items">
-            <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
-              <span class="text-slate-300">Set alat tulis (Pensel 2B, pemadam, pen)</span>
-            </label>
-            <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
-              <span class="text-slate-300">Kalkulator saintifik berkuasa (Math/Sains)</span>
-            </label>
-            <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
-              <span class="text-slate-300">Pakaian seragam kemas & disiplin</span>
-            </label>
-            <label class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/50 border border-white/5 hover:bg-slate-900 cursor-pointer transition">
-              <input type="checkbox" onchange="updateChecklist()" class="rounded border-slate-700 text-white focus:ring-white/50 w-4 h-4 bg-slate-900">
-              <span class="text-slate-300">Tidur secukupnya malam sebelum ujian</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Motivation / Tips Card -->
-      <div class="glass-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
-              <i class="fa-solid fa-lightbulb text-base"></i>
-            </div>
-            <div>
-              <h3 class="font-display font-bold text-base text-white">Petua Kecemerlangan</h3>
-              <p class="text-xs text-slate-400">Nasihat Guru UASA</p>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-300 leading-relaxed italic bg-slate-950/50 p-3.5 rounded-xl border border-white/5">
-            "Baca soalan dengan teliti, perhatikan kata kunci soalan, dan uruskan masa mengikut peruntukan markah bagi setiap bahagian."
-          </p>
-        </div>
-
-        <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
-          <span>SMK Raja Ali 2026</span>
-          <span class="text-slate-200 font-semibold">#UsahaTanggaKekejayaan</span>
-        </div>
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- MODAL 1: Info & Guidelines -->
-  <div id="info-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-    <div class="glass-card rounded-3xl max-w-lg w-full p-6 sm:p-8 relative space-y-5 border border-white/15">
-      <button onclick="closeModal('info-modal')" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <div class="flex items-center gap-3">
-        <div class="p-3 rounded-2xl bg-white/15 text-white border border-white/25 backdrop-blur-md">
-          <i class="fa-solid fa-school text-xl"></i>
-        </div>
-        <div>
-          <h3 class="font-display font-bold text-xl text-white">Jadual UASA 2026</h3>
-          <p class="text-xs text-slate-400">SMK Raja Ali, Jalan Sultan Azlan Shah</p>
-        </div>
-      </div>
-
-      <div class="space-y-3 text-xs text-slate-300 leading-relaxed max-h-80 overflow-y-auto pr-1">
-        <p class="font-semibold text-white">Ketentuan Utama Peperiksaan:</p>
-        <ul class="list-disc pl-4 space-y-1 text-slate-300">
-          <li>Peperiksaan bermula pada <strong class="text-white">12 Oktober 2026 hingga 19 Oktober 2026</strong>.</li>
-          <li>Murid wajib berada di sekolah sekurang-kurangnya 15 minit sebelum kertas pertama bermula.</li>
-          <li>Waktu REHAT rasmi adalah dari jam <strong>9.30 – 10.00 Pagi</strong> setiap hari.</li>
-          <li>Subjek KKQ dan Bahasa Arab terpakai untuk murid <strong class="text-white">Kelas Alfa sahaja</strong>.</li>
-        </ul>
-
-        <div class="mt-4 p-3.5 rounded-2xl bg-white/10 border border-white/20 text-slate-200 backdrop-blur-md">
-          <p class="font-bold mb-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Peringatan Penting!</p>
-          <p>Ujian ulangan tidak akan diberikan seandainya murid ponteng atau tidak hadir tanpa dokumen sah yang dinyatakan oleh pihak pentadbiran sekolah.</p>
-        </div>
-      </div>
-
-      <button onclick="closeModal('info-modal')" class="w-full py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-semibold text-xs border border-white/30 backdrop-blur-md transition shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
-        Saya Faham & Bersedia
-      </button>
-    </div>
-  </div>
-
-  <!-- MODAL 2: Pomodoro Study Timer -->
-  <div id="pomodoro-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-    <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 relative space-y-6 border border-white/15 text-center">
-      <button onclick="closeModal('pomodoro-modal')" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <div>
-        <span class="px-3 py-1 rounded-full bg-white/15 text-white border border-white/25 backdrop-blur-md text-xs font-bold">Teknik Pomodoro 25 Minit</span>
-        <h3 class="font-display font-bold text-2xl text-white mt-2">Pemfokusan Ulang Kaji</h3>
-        <p class="text-xs text-slate-400 mt-1">Fokus 25 Minit, Rehat 5 Minit</p>
-      </div>
-
-      <div class="py-6 bg-slate-950/80 rounded-2xl border border-white/10">
-        <span id="pomo-display" class="font-display text-5xl font-extrabold text-white tracking-wider">25:00</span>
-        <p id="pomo-status" class="text-xs text-slate-400 font-medium mt-2">Sedia Untuk Bermula</p>
-      </div>
-
-      <div class="flex items-center justify-center gap-3">
-        <button id="pomo-start-btn" onclick="togglePomodoro()" class="px-6 py-3 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs border border-white/30 backdrop-blur-md transition flex items-center gap-2 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
-          <i class="fa-solid fa-play"></i> Mula
-        </button>
-        <button onclick="resetPomodoro()" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition">
-          <i class="fa-solid fa-rotate-right"></i> Reset
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="mt-12 text-center text-xs text-slate-500 space-y-1">
-    <p>© 2026 SMK Raja Ali, Kuala Lumpur • Portal Countdown & Jadual UASA</p>
-    <p>Direka khas untuk persediaan peperiksaan murid Tingkatan 1 & Tingkatan 2</p>
-  </footer>
-
-  <script>
-    // Full UASA Exam Data for SMK Raja Ali 2026
-    const scheduleData = [
-      {
-        id: 1,
-        dateStr: "12/10/26",
-        dayLabel: "Isnin (12 Okt 2026)",
-        startTime: "07:55",
-        endTime: "09:25",
-        startISO: "2026-10-12T07:55:00",
-        endISO: "2026-10-12T09:25:00",
-        duration: "1 Jam 30 Minit",
-        subject: "Bahasa Melayu 1",
-        t1Teacher: "Cik Mazlina",
-        t2Teacher: "Pn. Mursyidah",
-        type: "paper",
-        icon: "fa-book-open"
-      },
-      {
-        id: 2,
-        dateStr: "12/10/26",
-        dayLabel: "Isnin (12 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-12T09:30:00",
-        endISO: "2026-10-12T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 3,
-        dateStr: "12/10/26",
-        dayLabel: "Isnin (12 Okt 2026)",
-        startTime: "10:30",
-        endTime: "11:30",
-        startISO: "2026-10-12T10:30:00",
-        endISO: "2026-10-12T11:30:00",
-        duration: "1 Jam",
-        subject: "Bahasa Melayu 2",
-        t1Teacher: "En. Hazwan",
-        t2Teacher: "Cik Mazlina",
-        type: "paper",
-        icon: "fa-pen-nib"
-      },
-      {
-        id: 4,
-        dateStr: "12/10/26",
-        dayLabel: "Isnin (12 Okt 2026)",
-        startTime: "12:25",
-        endTime: "13:25",
-        startISO: "2026-10-12T12:25:00",
-        endISO: "2026-10-12T13:25:00",
-        duration: "1 Jam",
-        subject: "Pendidikan Seni Visual",
-        t1Teacher: "Pn. Muntia",
-        t2Teacher: "Cik Suziana",
-        type: "paper",
-        icon: "fa-palette"
-      },
-      {
-        id: 5,
-        dateStr: "13/10/26",
-        dayLabel: "Selasa (13 Okt 2026)",
-        startTime: "07:30",
-        endTime: "09:30",
-        startISO: "2026-10-13T07:30:00",
-        endISO: "2026-10-13T09:30:00",
-        duration: "2 Jam",
-        subject: "Sejarah",
-        t1Teacher: "Cik Suziana",
-        t2Teacher: "En. Safiuddin",
-        type: "paper",
-        icon: "fa-landmark"
-      },
-      {
-        id: 6,
-        dateStr: "13/10/26",
-        dayLabel: "Selasa (13 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-13T09:30:00",
-        endISO: "2026-10-13T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 7,
-        dateStr: "13/10/26",
-        dayLabel: "Selasa (13 Okt 2026)",
-        startTime: "11:25",
-        endTime: "13:25",
-        startISO: "2026-10-13T11:25:00",
-        endISO: "2026-10-13T13:25:00",
-        duration: "2 Jam",
-        subject: "Matematik",
-        t1Teacher: "Pn. Salwati",
-        t2Teacher: "En. Syaifonazre",
-        type: "paper",
-        icon: "fa-calculator"
-      },
-      {
-        id: 8,
-        dateStr: "14/10/26",
-        dayLabel: "Rabu (14 Okt 2026)",
-        startTime: "07:55",
-        endTime: "09:25",
-        startISO: "2026-10-14T07:55:00",
-        endISO: "2026-10-14T09:25:00",
-        duration: "1 Jam 30 Minit",
-        subject: "Bahasa Inggeris 1",
-        t1Teacher: "Cik Khairunnisa",
-        t2Teacher: "Pn. Sughanya",
-        type: "paper",
-        icon: "fa-language"
-      },
-      {
-        id: 9,
-        dateStr: "14/10/26",
-        dayLabel: "Rabu (14 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-14T09:30:00",
-        endISO: "2026-10-14T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 10,
-        dateStr: "14/10/26",
-        dayLabel: "Rabu (14 Okt 2026)",
-        startTime: "10:15",
-        endTime: "11:15",
-        startISO: "2026-10-14T10:15:00",
-        endISO: "2026-10-14T11:15:00",
-        duration: "1 Jam",
-        subject: "Bahasa Inggeris 2",
-        t1Teacher: "Cik Khairunnisa",
-        t2Teacher: "Pn. Sughanya",
-        type: "paper",
-        icon: "fa-pen-fancy"
-      },
-      {
-        id: 11,
-        dateStr: "14/10/26",
-        dayLabel: "Rabu (14 Okt 2026)",
-        startTime: "11:55",
-        endTime: "12:55",
-        startISO: "2026-10-14T11:55:00",
-        endISO: "2026-10-14T12:55:00",
-        duration: "1 Jam",
-        subject: "PJPK",
-        t1Teacher: "Pn. Norema",
-        t2Teacher: "En. Ibrahim",
-        type: "paper",
-        icon: "fa-volleyball"
-      },
-      {
-        id: 12,
-        dateStr: "15/10/26",
-        dayLabel: "Khamis (15 Okt 2026)",
-        startTime: "07:30",
-        endTime: "09:30",
-        startISO: "2026-10-15T07:30:00",
-        endISO: "2026-10-15T09:30:00",
-        duration: "2 Jam",
-        subject: "Sains",
-        t1Teacher: "Pn. Hasimah",
-        t2Teacher: "Pn. Fauziah",
-        type: "paper",
-        icon: "fa-flask"
-      },
-      {
-        id: 13,
-        dateStr: "15/10/26",
-        dayLabel: "Khamis (15 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-15T09:30:00",
-        endISO: "2026-10-15T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 14,
-        dateStr: "15/10/26",
-        dayLabel: "Khamis (15 Okt 2026)",
-        startTime: "10:55",
-        endTime: "12:55",
-        startISO: "2026-10-15T10:55:00",
-        endISO: "2026-10-15T12:55:00",
-        duration: "2 Jam",
-        subject: "Geografi",
-        t1Teacher: "Pn. Norshawidah",
-        t2Teacher: "En. Ibrahim",
-        type: "paper",
-        icon: "fa-earth-asia"
-      },
-      {
-        id: 15,
-        dateStr: "16/10/26",
-        dayLabel: "Jumaat (16 Okt 2026)",
-        startTime: "07:55",
-        endTime: "09:25",
-        startISO: "2026-10-16T07:55:00",
-        endISO: "2026-10-16T09:25:00",
-        duration: "1 Jam 30 Minit",
-        subject: "Reka Bentuk & Teknologi",
-        t1Teacher: "Pn. Fatin",
-        t2Teacher: "En. Saufi",
-        type: "paper",
-        icon: "fa-microchip"
-      },
-      {
-        id: 16,
-        dateStr: "16/10/26",
-        dayLabel: "Jumaat (16 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-16T09:30:00",
-        endISO: "2026-10-16T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 17,
-        dateStr: "16/10/26",
-        dayLabel: "Jumaat (16 Okt 2026)",
-        startTime: "10:25",
-        endTime: "12:25",
-        startISO: "2026-10-16T10:25:00",
-        endISO: "2026-10-16T12:25:00",
-        duration: "2 Jam",
-        subject: "Bahasa Cina / Pendidikan Islam",
-        t1Teacher: "Pn. Chew / En. Noor Iman",
-        t2Teacher: "Pn. Chew / Pn. Naqiyah",
-        type: "paper",
-        icon: "fa-hands-praying"
-      },
-      {
-        id: 18,
-        dateStr: "19/10/26",
-        dayLabel: "Isnin (19 Okt 2026)",
-        startTime: "07:55",
-        endTime: "09:25",
-        startISO: "2026-10-19T07:55:00",
-        endISO: "2026-10-19T09:25:00",
-        duration: "1 Jam 30 Minit",
-        subject: "KKQ (Kelas Alfa Sahaja)",
-        t1Teacher: "Pn. Saudah",
-        t2Teacher: "Pn. Saudah",
-        type: "paper",
-        note: "Kelas Alfa Sahaja",
-        icon: "fa-star-and-crescent"
-      },
-      {
-        id: 19,
-        dateStr: "19/10/26",
-        dayLabel: "Isnin (19 Okt 2026)",
-        startTime: "08:25",
-        endTime: "09:25",
-        startISO: "2026-10-19T08:25:00",
-        endISO: "2026-10-19T09:25:00",
-        duration: "1 Jam",
-        subject: "Pendidikan Moral",
-        t1Teacher: "Pn. Rashidah",
-        t2Teacher: "Pn. Ku Norshairah",
-        type: "paper",
-        icon: "fa-heart"
-      },
-      {
-        id: 20,
-        dateStr: "19/10/26",
-        dayLabel: "Isnin (19 Okt 2026)",
-        startTime: "09:30",
-        endTime: "10:00",
-        startISO: "2026-10-19T09:30:00",
-        endISO: "2026-10-19T10:00:00",
-        duration: "30 Minit",
-        subject: "REHAT",
-        t1Teacher: "-",
-        t2Teacher: "-",
-        type: "break",
-        icon: "fa-mug-hot"
-      },
-      {
-        id: 21,
-        dateStr: "19/10/26",
-        dayLabel: "Isnin (19 Okt 2026)",
-        startTime: "11:25",
-        endTime: "13:25",
-        startISO: "2026-10-19T11:25:00",
-        endISO: "2026-10-19T13:25:00",
-        duration: "2 Jam",
-        subject: "Bahasa Arab (Kelas Alfa Sahaja)",
-        t1Teacher: "Pn. Naqiyah",
-        t2Teacher: "En. Noor Iman",
-        type: "paper",
-        note: "Kelas Alfa Sahaja",
-        icon: "fa-kaaba"
-      }
-    ];
-
-    let currentTingkatan = 1;
-    let selectedDayFilter = 'all';
-    let searchQuery = '';
-    let countdownTargetMode = 'start'; // 'start' or 'next'
-
-    const examStartISO = "2026-10-12T07:55:00";
-
-    function setTingkatan(ting) {
-      currentTingkatan = ting;
-      const btn1 = document.getElementById('btn-ting1');
-      const btn2 = document.getElementById('btn-ting2');
-      const titleDisplay = document.getElementById('display-tingkatan-title');
-
-      if (ting === 1) {
-        btn1.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap";
-        btn2.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap";
-        titleDisplay.textContent = "Tingkatan 1";
-      } else {
-        btn2.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 bg-white/25 backdrop-blur-md text-white border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] whitespace-nowrap";
-        btn1.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 text-slate-300 hover:text-white hover:bg-white/10 whitespace-nowrap";
-        titleDisplay.textContent = "Tingkatan 2";
-      }
-
-      renderSchedule();
-      updateNextPaperBanner();
-    }
-
-    function setCountdownTarget(mode) {
-      countdownTargetMode = mode;
-      const btnStart = document.getElementById('btn-target-start');
-      const btnNext = document.getElementById('btn-target-next');
-      const label = document.getElementById('countdown-mode-label');
-
-      if (mode === 'start') {
-        btnStart.className = "px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition";
-        btnNext.className = "px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition";
-        label.textContent = "Hitung Mundur Tarikh Mula UASA";
-      } else {
-        btnNext.className = "px-3.5 py-2 rounded-xl bg-white/25 backdrop-blur-md text-white font-medium border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/35 transition";
-        btnStart.className = "px-3.5 py-2 rounded-xl bg-slate-950/30 backdrop-blur-md text-slate-200 hover:text-white font-medium border border-white/20 hover:bg-white/10 transition";
-        label.textContent = "Hitung Mundur Kertas Seterusnya";
-      }
-
-      updateTimer();
-    }
-
-    function filterDay(day) {
-      selectedDayFilter = day;
-      document.querySelectorAll('.day-tab').forEach(tab => {
-        if (tab.getAttribute('data-day') === day) {
-          tab.className = "day-tab px-4 py-2.5 rounded-xl border border-white/30 bg-white/20 backdrop-blur-md text-white shadow-sm shrink-0 transition";
-        } else {
-          tab.className = "day-tab px-4 py-2.5 rounded-xl border border-white/10 bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 shrink-0 transition";
-        }
-      });
-      renderSchedule();
-    }
-
-    function handleSearch() {
-      searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
-      renderSchedule();
-    }
-
-    function renderSchedule() {
-      const container = document.getElementById('timetable-container');
-      const noResults = document.getElementById('no-results');
-      const now = new Date();
-
-      let filtered = scheduleData.filter(item => {
-        if (selectedDayFilter !== 'all' && item.dateStr !== selectedDayFilter) return false;
-
-        if (searchQuery) {
-          const teacher = currentTingkatan === 1 ? item.t1Teacher : item.t2Teacher;
-          const matchSub = item.subject.toLowerCase().includes(searchQuery);
-          const matchTeach = teacher.toLowerCase().includes(searchQuery);
-          const matchDay = item.dayLabel.toLowerCase().includes(searchQuery);
-          if (!matchSub && !matchTeach && !matchDay) return false;
+            // Hide after 3 seconds
+            setTimeout(() => {
+                alertBox.classList.add('translate-y-full', 'sm:-translate-y-full', 'opacity-0');
+                setTimeout(() => {
+                    alertModal.classList.add('hidden');
+                }, 300);
+            }, 3000);
         }
 
-        return true;
-      });
+        addBtn.addEventListener('click', () => {
+            uploadModal.classList.remove('hidden');
+            fileInput.value = '';
+            captionInput.value = '';
+        });
 
-      if (filtered.length === 0) {
-        container.innerHTML = '';
-        noResults.classList.remove('hidden');
-        return;
-      } else {
-        noResults.classList.add('hidden');
-      }
+        cancelBtn.addEventListener('click', () => {
+            uploadModal.classList.add('hidden');
+        });
 
-      container.innerHTML = filtered.map(item => {
-        const teacher = currentTingkatan === 1 ? item.t1Teacher : item.t2Teacher;
-        const isBreak = item.type === 'break';
-        const startISO = new Date(item.startISO);
-        const endISO = new Date(item.endISO);
+        // Close modal when clicking outside the sticky note
+        uploadModal.addEventListener('click', (e) => {
+            if (e.target === uploadModal) {
+                uploadModal.classList.add('hidden');
+            }
+        });
 
-        let statusBadge = '';
-        let cardStyle = 'hover:border-white/20';
+        saveBtn.addEventListener('click', () => {
+            const file = fileInput.files[0];
+            const caption = captionInput.value.trim();
 
-        if (now < startISO) {
-          statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-slate-800/80 text-slate-300 text-[10px] font-medium border border-white/10">Akan Datang</span>`;
-        } else if (now >= startISO && now <= endISO) {
-          statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold border border-white/30 animate-pulse">SEDANG BERLANGSUNG</span>`;
-          cardStyle = 'border-white/50 ring-1 ring-white/30';
-        } else {
-          statusBadge = `<span class="px-2.5 py-0.5 rounded-full bg-slate-900/40 text-slate-500 text-[10px] font-medium">Selesai</span>`;
+            if (!file) {
+                showAlert("Sila pilih gambar atau video dahulu ya!");
+                return;
+            }
+
+            // Determine if it's a video based on MIME type
+            const isVideo = file.type.startsWith('video/');
+            
+            // Create a local session URL for the file to render immediately without servers
+            const fileUrl = URL.createObjectURL(file);
+            
+            // Add to our entries array
+            entries.push({
+                id: Date.now(),
+                url: fileUrl,
+                caption: caption || 'Tiada kapsyen...',
+                isVideo: isVideo,
+                date: new Date().toLocaleDateString('ms-MY', { day: 'numeric', month: 'long', year: 'numeric' })
+            });
+
+            // Close modal and re-render
+            uploadModal.classList.add('hidden');
+            renderGallery();
+        });
+
+        function renderGallery() {
+            // Clear current gallery except empty state
+            gallery.innerHTML = '';
+
+            if (entries.length === 0) {
+                gallery.appendChild(emptyState);
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            // Hide empty state
+            emptyState.style.display = 'none';
+
+            // Loop through entries and create DOM nodes
+            entries.forEach((entry, index) => {
+                const itemDiv = document.createElement('div');
+                
+                // Generate a random slight rotation (-3deg to 3deg) for organic look
+                const randomRotate = (Math.random() * 6 - 3).toFixed(1);
+                
+                itemDiv.className = `polaroid flex flex-col`;
+                itemDiv.style.transform = `rotate(${randomRotate}deg)`;
+
+                // HTML structure for a single polaroid photo/video
+                let mediaElement = '';
+                if (entry.isVideo) {
+                    mediaElement = `
+                        <video controls class="w-full h-auto object-cover rounded bg-slate-100 shadow-inner" style="max-height: 250px;">
+                            <source src="${entry.url}" type="video/mp4">
+                            Browser anda tidak menyokong tag video.
+                        </video>
+                    `;
+                } else {
+                    mediaElement = `
+                        <img src="${entry.url}" alt="Memori" class="w-full h-auto object-cover rounded bg-slate-100 shadow-inner" style="max-height: 250px;">
+                    `;
+                }
+
+                itemDiv.innerHTML = `
+                    <div class="tape"></div>
+                    <div class="mt-2 mb-3 relative overflow-hidden flex-grow">
+                        ${mediaElement}
+                    </div>
+                    <div class="mt-2 text-center">
+                        <p class="text-3xl text-slate-800 leading-tight">${entry.caption}</p>
+                        <p class="text-xl text-slate-400 mt-2">${entry.date}</p>
+                    </div>
+                    <button onclick="deleteEntry(${entry.id})" class="absolute top-2 right-2 bg-red-100 text-red-500 rounded-full w-8 h-8 flex items-center justify-center opacity-0 transition-opacity hover:bg-red-200" title="Buang">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                `;
+
+                // Show delete button on hover
+                itemDiv.addEventListener('mouseenter', () => {
+                    itemDiv.querySelector('button').style.opacity = '1';
+                });
+                itemDiv.addEventListener('mouseleave', () => {
+                    itemDiv.querySelector('button').style.opacity = '0';
+                });
+
+                gallery.appendChild(itemDiv);
+            });
         }
 
-        if (isBreak) {
-          return `
-            <div class="glass-card rounded-2xl p-4 flex items-center justify-between opacity-75 border-dashed border-white/15 bg-slate-950/30">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-white/10 text-slate-200 border border-white/20 flex items-center justify-center shrink-0">
-                  <i class="fa-solid fa-mug-hot text-sm"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-xs text-slate-200">WAKTU REHAT</h4>
-                  <p class="text-[11px] text-slate-400">${item.startTime} - ${item.endTime}</p>
-                </div>
-              </div>
-              <span class="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-white/10 text-slate-200 border border-white/20">30 Minit</span>
-            </div>
-          `;
-        }
+        window.deleteEntry = function(id) {
+            const index = entries.findIndex(e => e.id === id);
+            if (index > -1) {
+                // Free up memory from browser
+                URL.revokeObjectURL(entries[index].url);
+                entries.splice(index, 1);
+                renderGallery();
+            }
+        };
 
-        return `
-          <div class="glass-card rounded-2xl p-5 space-y-4 transition duration-200 flex flex-col justify-between ${cardStyle}">
-            <div class="space-y-3">
-              <!-- Top Row: Date & Status -->
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-semibold text-slate-200 flex items-center gap-1.5 text-[11px]">
-                  <i class="fa-regular fa-calendar"></i>
-                  ${item.dayLabel}
-                </span>
-                ${statusBadge}
-              </div>
-
-              <!-- Subject & Time -->
-              <div class="flex items-start gap-3 pt-1">
-                <div class="w-10 h-10 rounded-xl bg-white/15 text-white border border-white/25 backdrop-blur-md flex items-center justify-center shrink-0">
-                  <i class="fa-solid ${item.icon} text-base"></i>
-                </div>
-                <div class="space-y-0.5 min-w-0 flex-1">
-                  <h4 class="font-display font-bold text-base text-white leading-snug truncate">${item.subject}</h4>
-                  <p class="text-xs text-slate-300 font-medium">
-                    <i class="fa-regular fa-clock mr-1 text-slate-400"></i>
-                    ${item.startTime} – ${item.endTime} <span class="text-slate-400">(${item.duration})</span>
-                  </p>
-                </div>
-              </div>
-
-              <!-- Live Individual Subject Countdown -->
-              <div class="p-2.5 rounded-xl bg-slate-950/70 border border-white/10 flex items-center justify-between text-xs">
-                <span class="text-[11px] text-slate-400 font-medium flex items-center gap-1.5">
-                  <i class="fa-solid fa-hourglass-half text-slate-300"></i> Countdown:
-                </span>
-                <span id="card-timer-${item.id}" class="font-mono font-bold text-slate-200">--:--:--</span>
-              </div>
-            </div>
-
-            <!-- Bottom Row: Teacher & Note -->
-            <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
-              <div class="flex items-center gap-1.5 truncate">
-                <i class="fa-solid fa-user-tie text-slate-400 text-[11px]"></i>
-                <span class="truncate">Guru: <strong class="text-slate-200 font-semibold">${teacher}</strong></span>
-              </div>
-              ${item.note ? `<span class="px-2 py-0.5 rounded bg-white/15 text-slate-200 font-medium text-[10px] shrink-0 border border-white/20">${item.note}</span>` : ''}
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function getNextPaper() {
-      const now = new Date();
-      const upcoming = scheduleData.filter(i => i.type === 'paper' && new Date(i.startISO) > now);
-      return upcoming.length > 0 ? upcoming[0] : null;
-    }
-
-    function updateNextPaperBanner() {
-      const nextPaper = getNextPaper();
-      const textEl = document.getElementById('next-paper-text');
-      const timeEl = document.getElementById('next-paper-time');
-      const teacher = nextPaper ? (currentTingkatan === 1 ? nextPaper.t1Teacher : nextPaper.t2Teacher) : '';
-
-      if (nextPaper) {
-        textEl.innerHTML = `Kertas Seterusnya: <strong class="text-white">${nextPaper.subject}</strong> (${nextPaper.dayLabel.split(' ')[0]}) - Guru: ${teacher}`;
-        timeEl.textContent = `${nextPaper.startTime}`;
-      } else {
-        textEl.textContent = "Semua kertas UASA 2026 telah tamat!";
-        timeEl.textContent = "SELESAI";
-      }
-    }
-
-    function updateTimer() {
-      const now = new Date();
-      let targetDate;
-
-      if (countdownTargetMode === 'start') {
-        targetDate = new Date(examStartISO);
-      } else {
-        const next = getNextPaper();
-        targetDate = next ? new Date(next.startISO) : new Date(examStartISO);
-      }
-
-      const diff = targetDate - now;
-
-      const daysEl = document.getElementById('timer-days');
-      const hoursEl = document.getElementById('timer-hours');
-      const minEl = document.getElementById('timer-minutes');
-      const secEl = document.getElementById('timer-seconds');
-
-      if (diff <= 0) {
-        daysEl.textContent = '00';
-        hoursEl.textContent = '00';
-        minEl.textContent = '00';
-        secEl.textContent = '00';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      daysEl.textContent = String(days).padStart(2, '0');
-      hoursEl.textContent = String(hours).padStart(2, '0');
-      minEl.textContent = String(minutes).padStart(2, '0');
-      secEl.textContent = String(seconds).padStart(2, '0');
-
-      // Update Individual Subject Card Countdowns
-      scheduleData.forEach(item => {
-        const cardTimerEl = document.getElementById(`card-timer-${item.id}`);
-        if (!cardTimerEl) return;
-
-        const paperStart = new Date(item.startISO);
-        const paperEnd = new Date(item.endISO);
-        const diffStart = paperStart - now;
-        const diffEnd = paperEnd - now;
-
-        if (diffStart > 0) {
-          const d = Math.floor(diffStart / (1000 * 60 * 60 * 24));
-          const h = Math.floor((diffStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const m = Math.floor((diffStart % (1000 * 60 * 60)) / (1000 * 60));
-          const s = Math.floor((diffStart % (1000 * 60)) / 1000);
-
-          if (d > 0) {
-            cardTimerEl.textContent = `${d}h ${String(h).padStart(2, '0')}j ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
-          } else {
-            cardTimerEl.textContent = `${String(h).padStart(2, '0')}j ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
-          }
-          cardTimerEl.className = "font-mono font-bold text-slate-200";
-        } else if (diffEnd > 0) {
-          const m = Math.floor(diffEnd / (1000 * 60));
-          const s = Math.floor((diffEnd % (1000 * 60)) / 1000);
-          cardTimerEl.textContent = `Baki ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
-          cardTimerEl.className = "font-mono font-bold text-white animate-pulse";
-        } else {
-          cardTimerEl.textContent = "Peperiksaan Tamat";
-          cardTimerEl.className = "font-sans text-[11px] font-medium text-slate-500";
-        }
-      });
-    }
-
-    function updateChecklist() {
-      const checkboxes = document.querySelectorAll('#checklist-items input[type="checkbox"]');
-      let checked = 0;
-      checkboxes.forEach(cb => { if (cb.checked) checked++; });
-      document.getElementById('checklist-progress').textContent = `${checked}/${checkboxes.length}`;
-    }
-
-    function openModal(id) {
-      document.getElementById(id).classList.remove('hidden');
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).classList.add('hidden');
-    }
-
-    let pomoInterval = null;
-    let pomoTimeLeft = 25 * 60;
-    let pomoRunning = false;
-
-    function togglePomodoro() {
-      const btn = document.getElementById('pomo-start-btn');
-      const status = document.getElementById('pomo-status');
-
-      if (pomoRunning) {
-        clearInterval(pomoInterval);
-        pomoRunning = false;
-        btn.innerHTML = '<i class="fa-solid fa-play"></i> Sambung';
-        status.textContent = 'Diberhentikan Seketika';
-      } else {
-        pomoRunning = true;
-        btn.innerHTML = '<i class="fa-solid fa-pause"></i> Henti';
-        status.textContent = 'Fokus Ulang Kaji Sedang Berjalan...';
-
-        pomoInterval = setInterval(() => {
-          if (pomoTimeLeft > 0) {
-            pomoTimeLeft--;
-            renderPomodoro();
-          } else {
-            clearInterval(pomoInterval);
-            pomoRunning = false;
-            status.textContent = 'Masa Tamat! Sila Rehat 5 Minit.';
-            btn.innerHTML = '<i class="fa-solid fa-play"></i> Mula Semula';
-          }
-        }, 1000);
-      }
-    }
-
-    function resetPomodoro() {
-      clearInterval(pomoInterval);
-      pomoRunning = false;
-      pomoTimeLeft = 25 * 60;
-      renderPomodoro();
-      document.getElementById('pomo-start-btn').innerHTML = '<i class="fa-solid fa-play"></i> Mula';
-      document.getElementById('pomo-status').textContent = 'Sedia Untuk Bermula';
-    }
-
-    function renderPomodoro() {
-      const mins = Math.floor(pomoTimeLeft / 60);
-      const secs = pomoTimeLeft % 60;
-      document.getElementById('pomo-display').textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }
-
-    window.onload = function() {
-      renderSchedule();
-      updateNextPaperBanner();
-      updateTimer();
-      setInterval(updateTimer, 1000);
-      setInterval(renderSchedule, 60000);
-    };
-  </script>
+        // Initial render
+        renderGallery();
+    </script>
 </body>
 </html>
